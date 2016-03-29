@@ -1,0 +1,355 @@
+ 
+  * {margin: 0;
+     padding: 0;
+     
+  }
+  
+textarea:focus, input:focus, select:focus {
+    outline: 0;
+}
+  body{background: #fff; 
+       font-size: 100%;}
+
+  header { 
+    width: 100%; 
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+          background: #ebebeb;
+    z-index: 2;
+    margin-bottom: 2%; 
+    overflow: hidden;
+          box-shadow: 0px 3px 8px #000;
+  }
+  
+  header .content {background: #f4f4f4;
+                   float: left;
+                   width: 100%;
+                   box-shadow: 0px 3px 8px #000;
+                   
+  
+  }
+     
+   .menu-superior{
+       float: left;    
+       width: 70%;
+       margin: 20px auto;
+       text-align: center;
+       display: table;
+
+      
+   }
+   
+   .menu-superior ul{
+       list-style: none;
+       
+   }
+   
+   .menu-superior ul li{
+       position: relative;
+       display: inline-block;
+   }
+
+   .menu-superior ul li:hover{
+    background: #F4A460;
+   }
+   
+   .menu-superior ul li a{
+       text-decoration: none;
+       font: 16px sans-serif;
+       color: #000;
+       display: inline-block;
+       padding: 10px;
+       border-right: 1px solid antiquewhite;
+   }
+   
+  .inicio{
+        background: #F4A460;
+       
+   }
+   
+  .menu-superior ul li a:last-child{
+       border-right: 0;
+   }
+   
+  header ul a:hover{
+       text-decoration: underline;
+   }
+   
+  .acessibilidade{
+      /*position: relative;*/
+      /*padding: 2%;*/
+      width: 25%;
+      float: left;
+      /*background: red;*/
+      font: 16px sans-serif;
+                 
+      margin: 18px auto;
+      padding: 8px;
+  }        
+  
+  .header-acessibilidade #font{
+      float: right;
+  }  
+  
+  .acessibilidade .header-acessibilidade a{
+      display: inline-block;
+      text-decoration: none;
+      padding: 2%;
+      float: right;
+      color: #000;
+  }
+
+   
+ 
+  .social {
+      background: #000;
+      position: relative;
+      float: left;
+          margin: 2% 0 0 2%;
+          }        
+
+/*
+*
+*/
+ article{
+    background: #fff;
+    width: 58%;
+    
+    border-radius: 15px;
+    float: left;
+    margin: 1.5% 0% 5% 20%;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  article section {
+    float: left;
+    width: 100%; 
+    height: 440px;    
+  }
+
+
+  article section .style{
+    
+    float: left;
+    margin: 1% .5% 1% .5%;
+    padding-left: 2%; 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 76.5%;
+    height: 280px;
+  }
+
+
+
+
+  article section h2{
+    margin: .5%;
+  
+    border: 1px solid #ccc;
+    padding: 2% 0 0 2%;
+    height: 50px;
+    text-align: left;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+
+   article section h6{color: red;}
+
+    #erremail{position: absolute; float: left; margin: 4.8% 0% 0 1.2%; padding: 10% 0% 0 -10%; width:100px ; height: 12px;font-weight: bold;}
+    #errname{position: absolute;float: right; margin: 4.8% 0% 0 22.2%; padding:0; width:100px ; height: 12px;font-weight: bold; }
+    #errnick{position: absolute;float: left; margin: 9.2% 0% 0 1.2%;width:100px ; height: 12px;font-weight: bold; }
+    #errnasc{position: absolute;float: right; margin: 9.1% 0 0 22.2%; width:100px ;height: 12px;font-weight: bold; }
+    #errpassword{position: absolute;float: left; margin: 13.48% 0 0 1.15%;width:100px ; height: 12px;font-weight: bold; }
+    #errpasswordrepeat{position: absolute;float: right; margin: 13.49% 0 0 22.3%;width:100px ;height: 12px;font-weight: bold; }
+    #errcity{position: absolute;float: left; margin: 17.55% 0 0 1.2%;width:100px ; height: 12px;font-weight: bold; }
+    #errstate{position: absolute;float: right; margin: 17.55% 0 0 22.25% ;width:100px ; height: 12px;font-weight: bold; }
+  article section form img{
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 19%;
+    float: left;
+    margin: 4% .3% 1% .5%;
+  }
+
+  #image{opacity: 0; z-index: 1; margin: -7.5% 0% 1% .5%;}
+  
+  
+  .btn-photo{
+	  float: left;
+    margin: 0% 0% 1% .5%;
+    width: 19.3%;
+    height: 50px;
+
+  }
+  
+  #file-false{ z-index: 0;}
+
+    article section #user{
+    float: left;
+    margin: 18px 0 0 18px;
+    font-weight: bold;
+  }
+  
+  #image-to-uploader{  border: 1px solid #ccc;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 19%;
+    float: left;
+    margin: -33.25% .3% 1% .5%;
+	height: 195px;}
+	
+	#image-to-uploader img {width: 151px; margin: 0; float: left; position: absolute; height: 197px; z-index: 1; }
+
+      #user{ position: absolute;float: left;margin: 0% 0% 0% 0%;
+      padding: 0%;
+      
+      
+  }
+
+
+
+     .user{position: absolute;
+
+      float: left;
+      margin: 3% 0% 0% 1%;
+      width: 18%;
+      height: 22px; 
+  }
+
+   article section #name{
+    float: right;
+    margin: 3% 30% 0 0;
+    font-weight: bold;
+ }
+
+   article section .name{
+    float: right;
+    margin: 6.7% -38% 0 0%;
+    width: 38%;
+    height: 22px; 
+ }
+
+
+ article section #nickname{
+  float: left;
+  margin: 13% 0 0 3%;
+  font-weight: bold;
+ }
+
+   article section .nickname{
+    float: left;
+    margin: 16.5% 0% 0 -10.3%;
+    width: 40.3%;
+    height: 22px; 
+ }
+
+  article section #usernasc{
+    float: right;
+    margin: 1.8% 26% 0 0%;
+    font-weight: bold;
+  }
+
+     article section form .usernasc{
+      float: right;
+      margin: 0 11.5% 0 0;
+      width: 38%;
+      height: 22px; 
+  }
+
+   article section #password{
+    float: left;
+    margin: 7% 0% 0 -40.5%;
+    font-weight: bold;
+  }
+
+      article section .password{
+      float: left;
+      margin: 10% 0% 0 -41%;
+      width: 40%;
+      height: 22px; 
+  }
+
+   article section #passwordrepeat{
+    float: right;
+    margin: 2.5% 33% 0 0;
+    font-weight: bold;
+  }
+
+      article section .passwordrepeat{
+      float: right;
+      margin: 0% 11.5% 0 0;
+      width: 38%;
+      height: 22px; 
+  }
+
+   article section #city{
+    float: left;
+    margin: 7% 0 0 -40.5%;
+    font-weight: bold;
+
+  }
+ 
+
+
+     article section form .city{
+      float: left;
+      margin: 10% 0 0 -40.5%;
+      width: 40%;
+      height: 22px; 
+  }
+
+
+ article section #state{
+    float: right;
+    margin: 2.6% 41.3% 0 0%;
+    font-weight: bold;
+  }
+
+
+@-moz-document url-prefix(){
+      .style #city{
+            margin: 100px 0 0 100px;
+            position: fixed;
+            
+            
+            color: red; 
+      }
+}
+
+
+
+    article section form .state{
+      float: right;
+      margin: 0% 11.5% 0 0%;
+      width: 38%;
+      height: 22px; 
+  }
+
+
+  article section  form .btn-reset{
+      float: left;
+      margin: 1.3% 0 0 22% ;
+      width: 20%;
+      height: 33px; 
+  }
+
+
+  article section  form .btn-submit{
+      float: right;
+      margin: 1.3% 35% 0 0 ;
+      width: 20%;
+      height: 33px; 
+  }
+
+  footer p{
+    width: 100%;
+    height: 103px;
+    float: left;
+    background: #000;
+    
+  }
+  

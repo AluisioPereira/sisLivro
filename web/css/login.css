@@ -1,0 +1,259 @@
+
+
+  * {margin: 0;
+     padding: 0;
+     
+  }
+  
+textarea:focus, input:focus, select:focus {
+    outline: 0;
+}
+  body{background: #fff; 
+       font-size: 100%;}
+
+  header { 
+	  width: 100%; 
+	  position: relative;
+	  top: 0;
+	  right: 0;
+	  left: 0;
+          background: #ebebeb;
+	  z-index: 2;
+	  margin-bottom: 2%; 
+	  overflow: hidden;
+          box-shadow: 0px 3px 8px #000;
+  }
+  
+  header .content {background: #f4f4f4;
+                   float: left;
+                   width: 100%;
+                   box-shadow: 0px 3px 8px #000;
+                   
+  
+  }
+     
+   .menu-superior{
+       float: left;    
+       width: 70%;
+       margin: 20px auto;
+       text-align: center;
+       display: table;
+
+      
+   }
+   
+   .menu-superior ul{
+       list-style: none;
+       
+   }
+   
+   .menu-superior ul li{
+       position: relative;
+       display: inline-block;
+   }
+
+   .menu-superior ul li:hover{
+    background: #F4A460;
+   }
+   
+   .menu-superior ul li a{
+       text-decoration: none;
+       font: 16px sans-serif;
+       color: #000;
+       display: inline-block;
+       padding: 10px;
+       border-right: 1px solid antiquewhite;
+   }
+   
+  .inicio{
+        background: #F4A460;
+       
+   }
+   
+  .menu-superior ul li a:last-child{
+       border-right: 0;
+   }
+   
+  header ul a:hover{
+       text-decoration: underline;
+   }
+   
+  .acessibilidade{
+      /*position: relative;*/
+      /*padding: 2%;*/
+      width: 25%;
+      float: left;
+      /*background: red;*/
+      font: 16px sans-serif;
+                 
+      margin: 18px auto;
+      padding: 8px;
+  }        
+  
+  .header-acessibilidade #font{
+      float: right;
+  }  
+  
+  .acessibilidade .header-acessibilidade a{
+      display: inline-block;
+      text-decoration: none;
+      padding: 2%;
+      float: right;
+      color: #000;
+  }
+
+   
+ 
+  .social {
+      background: #000;
+      position: relative;
+      float: left;
+          margin: 2% 0 0 2%;
+          }        
+
+
+  article{
+    background: #fff;
+    width: 64%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    float: left;
+    margin: 3% 0% 7% 17%;
+  }
+  
+  article section {
+    float: left;
+    margin: 1% ;
+    width: 47.5%;     
+  }
+
+    article .left{
+      
+    border-right: 1px solid #ccc;
+  }
+
+
+  article section h2{
+    margin-bottom: 2%;
+    text-align: center;
+  }
+  article section hr{
+    margin-bottom: 3%;
+  }
+
+  article section label{
+    margin: 3% 0% 1% 7%;
+    font-weight: bold;
+  }
+  
+    article section form, .join{
+      float: left;
+      margin: 5%;
+      width: 85%;
+  }
+
+  article section .join form label{
+    float: left;
+    font-weight: bold;
+    margin: 8% 0% 2% 5%;
+  }
+  
+
+   article section form input{
+      float: right;
+      margin: 2%;
+      width: 90%;
+      height: 30px; 
+  }
+  
+  article section form h5{color: red; margin: 0% 0 0 40%;}
+
+  article section  .btn{
+      float: right;
+      margin: 3% 2% ;
+      width: 25%;
+      height: 30px; 
+  }
+  article section .join input{
+
+      float: right;
+      margin: 0% 0% 2% 5%;
+      width: 94%;
+      height: 30px; 
+
+  }
+
+  article section .join .btn{
+    width: 30%;
+    margin: 1% 0% 1% 10%;
+  }
+  footer p{
+    width: 100%;
+    height: 103px;
+    float: left;
+    background: #000;
+    
+  }
+  
+ 
+
+
+
+/*
+* Estiliza o centro dá página login e partde de cadastro
+*
+*/
+
+
+
+@media screen and (max-width: 400px) {
+
+}
+
+@media screen and (min-width: 401px) {
+
+}
+
+@media screen and (min-width: 594px) {
+
+}
+
+@media screen and (min-width: 673px) {
+
+}
+
+@media screen and (min-width: 783px) {
+
+}
+
+@media screen and (min-width: 810px) {
+
+}
+
+@media screen and (min-width: 846px) {
+
+}
+
+@media screen and (min-width: 1008px) {
+
+}
+
+@media screen and (min-width: 1040px) {
+
+}
+
+@media screen and (min-width: 1080px) {
+
+}
+
+@media screen and (min-width: 1110px) {
+
+}
+
+@media screen and (min-width: 1218px) {
+
+}
+
+@media screen and (min-width: 1260px) {
+
+}

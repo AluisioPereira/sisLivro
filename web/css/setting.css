@@ -1,0 +1,87 @@
+  * {margin: 0; padding: 0;}
+  
+  textarea:focus, input:focus, select:focus {outline: 0;}
+
+  body{width: 100%; height: 100%; background: #fff; font-size: 100%;}
+
+  header {  width: 100%; height: 3em; background: #ebebeb;z-index: 2;; overflow: hidden; box-shadow: 0px 3px 8px #000;}
+
+  header form #search{width: 25%; height: 1.8em; margin: .7% 0% 0% 2%; }
+
+  header form #btn-search{width: 2%; height: 1.8em; margin: .7% 0% 0% -2.25%; opacity: .5}
+
+  header #perf {float: right; width: 27%; margin: -2% 0% 0 0; }
+   header #perf a{display: inline-block; margin: 0 1%; padding: 0 2%;}
+  header #perf a img{width: 42px; height: 42px; margin: 0 0 0 0; border-radius: 50px;}
+  header #perf a h3, h4{float: left; padding: 0 0 12% 0; }
+  header #perf a h4{margin: -0% 0% 6% 0;}
+
+  header #menu a img{float: right; margin: -1.6% 15% 0 0; padding: 0 0 10% 0;}
+  article .left{float: left; margin: 3% 0% 0% 4%;   background: #fff; width: 14%; border-right: 2px solid #ebebeb;}
+
+  .nav-left ul li{list-style: none; margin: 3.5% 0% 0% 3%;}
+  a{text-decoration: none; color: #000000;}
+  .nav-left ul li a{text-decoration: none; }
+  article section{width: 75%;height: 400px; float: left; margin: 1.7% 0 0 2%; ;}
+  article section .form{width: 80%; float: left; height: 300px; border: 1px solid #f5f5f5; border-radius: 10px ;margin: 2.5% 0 0 4%;}
+  .userSearch{ margin: 10% 0 0 3.5%; width: 50%; }
+  section .userSearch img{float: left;width: 70px; height: 85px; margin: 0 2.5% 0 1%;}
+  section .userSearch a{ padding: 0% 0 0% 0%; }
+  .notifications{float: left; margin: -30% 0 0 33%; padding: 2%; width: 45%; border: 1px solid #f3f3f3; background: #fff;}
+  .notifications .friend img{width: 75px; height: 90px; float: left;}
+  .notifications .friend h3{float: left; margin: 0% 0 0 3%;}
+  .notifications .friend .cancel-not{height: 25px; float: right; margin: 20px 40px 0 0}
+  .notifications .friend .accept-not{height: 25px;float: left;margin: 20px 10px 0 70px}
+  .friend-add{width: 170px;height: 25px; float: right;margin: -2% 0% 0% 0%;}
+  article section .form .style{width: 65%; float: left; height: 220px; margin: 2% 0 0 3.5%}
+  article section form .photo{float: left; width: 15.5%; float: right; margin: 2% 13.3% 0 0; height: 162px;}
+  article section form .photo img {float: right;width: 130px; height: 160px; border: 1px solid #ccc; border-top-left-radius: 10px; border-top-right-radius: 10px;}
+  
+  #image-to-uploader{border: 1px solid #f5f5f5; border-top-left-radius: 10px; border-top-right-radius: 10px; width: 130px; height: 160px; float: left; margin: -19.8% .1% 1% 2%;}
+  #image-to-uploader img {width: 132px; margin: 0; float: left; position: absolute; height: 160px; z-index: 1; border-top-left-radius: 10px; border-top-right-radius: 10px;}
+
+  
+  
+  #name{float: left; margin: 2% 0 0 2%; }
+  .name{float: left; width: 42%; margin: 5.5% 0% 0 -21%; height: 23px;}
+  #errname{float: left; margin: 11% 0% 0 -42.5%; }
+  
+  #nickname{float: right; margin: 1.8% 40% 0 0%; }
+  .nickname{float: right; width: 42%; height: 23px; margin: .3% 8% 0 0%; }
+  #errnick{float: right; margin: 0% 36% 0 0%;}
+  
+  #password{float: right; margin: 2% 90% 0 0; }
+  .password{float: right; margin: 0% 55.5% 0 0% ;height: 23px; width: 42%;}
+  #errpassword{float: right; margin: 0% 79.2% 0 0%;}
+  
+  #passwordrepeat{float: right; margin: -10.7% 32.5% 0 0% }
+  .passwordrepeat{float: right; height: 23px; margin: -7.5% 8% 0 -0%; width: 42%; }
+  #errpasswordrepeat{float: right; margin: -2.3% 31.7% 0 -0%; }
+  
+  #usernasc{float: left; margin: 1% 0% 0 2%;}
+  .usernasc{float: left; width: 25%; height: 23px; margin: 4.6% 0 0 -25.5%;}
+  #errnasc{float: left; margin: 10% 0 0 -25%; }
+  
+  #city{float: left; margin: 1.1% 0% 0 6.4%; }
+  .city{float: left; width: 38%; height: 23px; margin: 4.7% 0 0 -9.5%;}
+  #errcity{float: left; margin: 10.1% 0 0 -38.5%;}
+  
+  #state{float: right; margin: 1.5% 14% 0 0%;}
+  .state{float: right; width: 15%; height: 25px; margin: 0% 8% 0 -0%; }
+  #errstate{float: right; margin: .1% 14.5% 0 -0%;}
+  
+  
+  #file-false{float:left; width: 135px; height: 45px; z-index: 1; opacity: 1; margin: 2.2% 0% 0 -5%;}
+  .btn-photo{float:left; width: 135px; height: 45px; margin: -36% 0 0 -5%; z-index: 0; opacity: 0; background: red;}
+  
+  .btn-submit{float:right; width: 18%; height: 40px; margin: 0% 42% 0 7%;}
+  .btn-reset{float:right; width: 18%; height: 40px; margin: 0;}
+  
+  #nav1{}
+  #nav2{}
+  .nav-left{}
+  .nav-left li{}
+  
+  
+  
+  
