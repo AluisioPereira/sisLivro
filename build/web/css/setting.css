@@ -11,7 +11,7 @@
   header form #btn-search{width: 2%; height: 1.8em; margin: .7% 0% 0% -2.25%; opacity: .5}
 
   header #perf {float: right; width: 27%; margin: -2% 0% 0 0; }
-   header #perf a{display: inline-block; margin: 0 1%; padding: 0 2%;}
+  header #perf a{display: inline-block; margin: 0 1%; padding: 0 2%;}
   header #perf a img{width: 42px; height: 42px; margin: 0 0 0 0; border-radius: 50px;}
   header #perf a h3, h4{float: left; padding: 0 0 12% 0; }
   header #perf a h4{margin: -0% 0% 6% 0;}
@@ -27,15 +27,20 @@
   .userSearch{ margin: 10% 0 0 3.5%; width: 50%; }
   section .userSearch img{float: left;width: 70px; height: 85px; margin: 0 2.5% 0 1%;}
   section .userSearch a{ padding: 0% 0 0% 0%; }
-  .notifications{float: left; margin: -30% 0 0 33%; padding: 2%; width: 45%; border: 1px solid #f3f3f3; background: #fff;}
+  .notifications{float: left; margin: -25% 0 0 10%; padding: 3% 2% 2% 2%; width: 30%; border: 1px solid #f3f3f3; background: #fff; display: none;}
   .notifications .friend img{width: 75px; height: 90px; float: left;}
-  .notifications .friend h3{float: left; margin: 0% 0 0 3%;}
-  .notifications .friend .cancel-not{height: 25px; float: right; margin: 20px 40px 0 0}
+  .notifications .friend a{float: left; margin: 0% 0 0 3%; width: 70%; font: bold;} 
+  .notifications .friend .cancel-not{height: 25px; float: right; margin: 20px 10px 0 0}
   .notifications .friend .accept-not{height: 25px;float: left;margin: 20px 10px 0 70px}
+  .notifications .friend hr{float: left; width: 100%; margin: 2% 0% 2% 0%;}
   .friend-add{width: 170px;height: 25px; float: right;margin: -2% 0% 0% 0%;}
   article section .form .style{width: 65%; float: left; height: 220px; margin: 2% 0 0 3.5%}
   article section form .photo{float: left; width: 15.5%; float: right; margin: 2% 13.3% 0 0; height: 162px;}
   article section form .photo img {float: right;width: 130px; height: 160px; border: 1px solid #ccc; border-top-left-radius: 10px; border-top-right-radius: 10px;}
+  
+  #criarGrupo{float: left; margin: -35% 0 0 38%; padding: 3% 2% 2% 2%; width: 44%; border: 1px solid #f3f3f3; background: #fff; display: none;}
+  #criarGrupo form #nameGrupo .nameGrupo{width: 98%; height: 25px; margin-bottom: 5%;}
+  #criarGrupo form #enviarDescricao{width: 25%; height: 30px; float: right; margin: 2% 2% 0 0;}
   
   #image-to-uploader{border: 1px solid #f5f5f5; border-top-left-radius: 10px; border-top-right-radius: 10px; width: 130px; height: 160px; float: left; margin: -19.8% .1% 1% 2%;}
   #image-to-uploader img {width: 132px; margin: 0; float: left; position: absolute; height: 160px; z-index: 1; border-top-left-radius: 10px; border-top-right-radius: 10px;}

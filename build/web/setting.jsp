@@ -4,6 +4,9 @@
     Author     : Zilderlan
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="br.com.sislivros.manager.GerenciadorSolicitacaoAmizade"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="br.com.sislivros.manager.GerenciadorUser"%>
 <%@page import="br.com.sislivros.valueobject.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,6 +16,14 @@
         request.getRequestDispatcher("login.jsp").forward(request, response);
     String s = user.getName();
     String name[] = s.split(" ");
+    
+        GerenciadorSolicitacaoAmizade gerenciador = new GerenciadorSolicitacaoAmizade();
+        
+
+
+
+        
+
 %>
 <!DOCTYPE html>  <!--  -->
 <html lang="PT-BR">  <!--  -->
@@ -47,7 +58,9 @@
 			<div class="" id="perf">
 				<a href="" id="perfil" alt=""><img src="<%=user.getPhoto()%>" title=""></a>
 				<a href="" ><h3> Olá, <%= name[0]%>!</h3></a>
-				<a href="" ><h4>Notificações</h4></a>
+                                <a href="EnviarSolicitacao?acao=clicked" onClick="document.getElementById('notifications').style.display='block';">
+                                    <h4>Notificações${qtde}</h4>
+                                </a>
 				
 
 			</div> 
@@ -69,22 +82,22 @@
 			
 			<nav class="nav-left" id="nav1">
 				<ul>
-					<li><h3>Meus alguma coisa</h3></li>
+					<li><h3>Meus Grupos</h3></li>
 					<li><a href="" >alguma coisa</a></li>
 					<li><a href="" >alguma coisa</a></li>
 					<li><a href="" >alguma coisa</a></li>
-					<li><a href="" >alguma coisa</a></li>
+					<li><a href="#" onclick="document.getElementById('criarGrupo').style.display='block';">Novo Grupo</a></li>
 				</ul>
 			
 			</nav>
 			
 			<nav class="nav-left" id="nav2">
 				<ul>
-					<li><h3>Meus alguma coisa</h3></li>
-					<li><a href="" >alguma coisa</a></li>
-					<li><a href="" >alguma coisa</a></li>
-					<li><a href="" >alguma coisa</a></li>
-					<li><a href="" >alguma coisa</a></li>
+					<li><h3>Notificações</h3></li>
+					<li><a href="#" >Pedidos de amizade</a></li>
+					<li><a href="#" >Recomendações</a></li>
+					<li><a href="#" >alguma coisa</a></li>
+					<li><a href="#" >alguma coisa</a></li>
 				</ul>
 			
 			</nav>
@@ -204,16 +217,38 @@
                     
             </section>
                 
+                <section>
+                    <div id="criarGrupo">
+                        <form action="" method="">
+                            <div id="nameGrupo">
+                                <input type="text" class="nameGrupo" name="nameGrupo" placeholder="Nome do Grupo">
+                            </div>
+                            <div id="descricaoGrupo" name="descricaoGrupo">
+                                <textarea type="text" class="descricaoGrupo" name="descricaoGrupo" rows="10" cols="60" maxlength="200" placeholder="Descrição do grupo"></textarea>
+                            </div>
+                            <input type="submit" id="enviarDescricao" value="Concluir">
+                        </form>
+                    </div>
+                </section>
+                
           
-            <section class="notifications style" style="display: ;">
+            <section class="notifications style" style="display: " id="notifications">
+
+                <% 
+                    request.setAttribute("setting", "setting.jsp");
+                %>
+                
+                <c:forEach var="users" items="${listSolic}">
+                  
                 <div class="friend" >                   
-                    <img src="img/usuario.jpg" class="img-not">
-                    <h3></h3>
+                    <img src="${users.photo}" class="img-not">
+                    <a href="#"><strong>${users.name}</strong></a>
                     <input type="button" class="cancel-not" value="Cancelar Solicitação">
                     <input type="button" class="accept-not" value="Aceitar Solicitação">
+                    <hr>
                 </div>  
-                <hr>
-                              
+                </c:forEach>
+                            
             </section>
 
 		

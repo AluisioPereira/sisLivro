@@ -24,8 +24,8 @@ import java.util.regex.Pattern;
 public class UsuarioDao implements UsuarioDaoIf{
   
     private Usuario user;
-    Connection conn = null;
-    PreparedStatement stm = null;
+    private Connection conn = null;
+    private PreparedStatement stm = null;
     
     public UsuarioDao() {
     }
@@ -95,10 +95,7 @@ public class UsuarioDao implements UsuarioDaoIf{
 			e.printStackTrace();
 		} finally {
                     Conexao.closeStatement(stm);
-                    Conexao.closeConnection(conn);
-                    
-                    
-			
+                    Conexao.closeConnection(conn);	
 		}
         return true;
     
@@ -232,9 +229,9 @@ public class UsuarioDao implements UsuarioDaoIf{
         PreparedStatement pre;
         try {
             conn = Conexao.conexao();
-            pre  = conn.prepareStatement(sql);
-            pre.setString(1, "%" + nome + "%");
-            ResultSet  result = pre.executeQuery();
+            stm  = conn.prepareStatement(sql);
+            stm.setString(1, "%" + nome + "%");
+            ResultSet  result = stm.executeQuery();
             
             while(result.next()){
                 user = new Usuario();
@@ -296,6 +293,7 @@ public class UsuarioDao implements UsuarioDaoIf{
 
     @Override
     public boolean tornarAdmin(String email) {
+        String sql = "UPDATE Usuario SET administrador";
         return true;
     }
     

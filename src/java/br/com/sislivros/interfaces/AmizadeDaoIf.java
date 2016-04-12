@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.sislivros.bisinessobject;
+package br.com.sislivros.interfaces;
 
 /**
  *
  * @author Zilderlan
  */
-public class GerenciadorUsuario {
+public interface AmizadeDaoIf{
+    
+    public boolean aceitarAmiizade();
+    
+    public boolean excluirAmiizade();
     
 }

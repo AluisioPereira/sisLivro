@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Documentos/NetBeansProjects/SisLivros/src/java/br/com/sislivros/servlets/Pesquisa.java</file>
-            <file>file:/E:/Documentos/NetBeansProjects/SisLivros/web/setting.jsp</file>
-            <file>file:/E:/Documentos/NetBeansProjects/SisLivros/web/usuarioPesquisa.jsp</file>
-            <file>file:/E:/Documentos/NetBeansProjects/SisLivros/web/css/setting.css</file>
-            <file>file:/E:/Documentos/NetBeansProjects/SisLivros/src/java/br/com/sislivros/servlets/LoginServlet.java</file>
-            <file>file:/E:/Documentos/NetBeansProjects/SisLivros/web/Pesquisa.jsp</file>
-            <file>file:/E:/Documentos/NetBeansProjects/SisLivros/web/Perfil.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/interfaces/GrupoDaoIf.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/dao/GrupoDao.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/dao/UsuarioDao.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/valueobject/Grupo.java</file>
         </group>
     </open-files>
 </project-private>

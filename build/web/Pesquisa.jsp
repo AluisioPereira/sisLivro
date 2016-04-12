@@ -1,5 +1,6 @@
 
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.List"%>
 <%@page import="br.com.sislivros.manager.GerenciadorUser"%>
 <%@page import="br.com.sislivros.valueobject.Usuario"%>
@@ -43,7 +44,7 @@
 			<div class="" id="perf">
 				<a href="" id="perfil" alt=""><img src="<%=user.getPhoto()%>" title=""></a>
 				<a href="#" ><h3> Olá, <%= name[0]%>!</h3></a>
-				<a href="#" ><h4>Notificações</h4></a>
+				<a href="#" onClick="document.getElementById('notifications').style.display='block';"><h4>Notificações</h4></a>
 				
 
 			</div> 
@@ -91,21 +92,20 @@
                             location.href = pagina;
                         }
                         </script>            
-            <% 
-
-            List<Usuario> lista = (List<Usuario>)session.getAttribute("list");
+  
             
-            for (Usuario usuario: lista){
-            %>
-            <div class="userSearch">
-            <img src="<%=usuario.getPhoto()%>" id="img-perfil">
-            <a href="usuarioPesquisa.jsp?param=<%=usuario.getNick()%>"><h1><%=usuario.getName()%></h1></a>
-            <h4><%=usuario.getNick()%></h4>
-            <h4>${param.acao}</h4>
-            <input type="button" value="Adicionar ao amigos" class="friend-add" onClick="abrirPagina('usuarioPesquisa.jsp?param=<%=usuario.getNick()%>')">
-            <br>
-            </div>
-            <%}%>
+            <c:forEach var="usuarios" items="${list}">
+                
+                <div class="userSearch">
+                    <img src="${usuarios.photo}" id="img-perfil">
+                    <a href="usuarioPesquisa.jsp?param=${usuarios.nick}"><h1>${usuarios.name}</h1></a>
+                    <h4>${usuarios.nick}</h4>
+                    <h4>${param.acao}</h4>
+                    <input type="button" value="Adicionar ao amigos" class="friend-add" onClick="abrirPagina('EnviarSolicitacao?param=${usuarios.email}')">
+                    <br>
+                </div>   
+            </c:forEach>
+
             <script>
 
 		$('#images').on('change', function(e){

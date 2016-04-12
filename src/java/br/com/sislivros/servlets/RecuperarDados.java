@@ -63,7 +63,7 @@ public class RecuperarDados extends HttpServlet {
                                                  {
                                                     caminho = "img"+ File.separator + new Date().getTime() + "_" + item.getName();
                                                     resp.getWriter().println("Caminho: " + caminho);
-                                                    File uploadedFile = new File("C:\\apache-softwere\\apache-tomcat-8.0.21\\webapps\\sislivros\\"+caminho);
+                                                    File uploadedFile = new File("C:\\TomCat\\apache-tomcat-8.0.21\\webapps\\sislivros\\"+caminho);
                                                     item.write(uploadedFile);
 
                                                  }
@@ -74,7 +74,7 @@ public class RecuperarDados extends HttpServlet {
                                         
 				}
 			} catch (Exception e) {
-//				resp.getWriter().println("ocorreu um problema ao fazer o upload: " + e.getMessage());
+				resp.getWriter().println("ocorreu um problema ao fazer o upload: " + e.getMessage());
 			}
 		}
                 

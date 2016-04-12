@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.sislivros.manager;
+package br.com.sislivros.valueobject;
 
 /**
  *
  * @author Zilderlan
  */
-public class Gerenciador {
+public class Amizade {
     
 }

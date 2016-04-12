@@ -7,6 +7,7 @@ package br.com.sislivros.conection;
 
 import br.com.sislivros.dao.UsuarioDao;
 import br.com.sislivros.manager.GerenciadorLivros;
+import br.com.sislivros.manager.GerenciadorSolicitacaoAmizade;
 import br.com.sislivros.manager.GerenciadorUser;
 import br.com.sislivros.valueobject.Livro;
 import br.com.sislivros.valueobject.Usuario;
@@ -19,20 +20,24 @@ import java.util.List;
 public class TestConection {
     
     public static void main(String args[]){
-    Usuario user = new Usuario();
-    GerenciadorUser gu = new GerenciadorUser();
-    
-    UsuarioDao u = new UsuarioDao();
-    
-    user.setName("xxxxx");
-    user.setNick("Zil12xxxx34");
-    user.setEmail("zilderlan123@gmail.com");
-    user.setSenha("12345");
-    user.setDataNasc(convertDate("10/10/1010"));
-    user.setCity("Cajazeiras");
-    user.setState("paraíba");
-    user.setPhoto("foto");
-    gu.atualizar(user);
+        GerenciadorSolicitacaoAmizade g = new GerenciadorSolicitacaoAmizade();
+//        System.out.println(g.qtdeSolicitacoes("aluisio11@hotmail.com"));
+        System.out.println(g.qtdeSolicitacoes("email@gmail"));
+        
+//    Usuario user = new Usuario();
+//    GerenciadorUser gu = new GerenciadorUser();
+//    
+//    UsuarioDao u = new UsuarioDao();
+//    
+//    user.setName("xxxxx");
+//    user.setNick("Zil12xxxx34");
+//    user.setEmail("zilderlan123@gmail.com");
+//    user.setSenha("12345");
+//    user.setDataNasc(convertDate("10/10/1010"));
+//    user.setCity("Cajazeiras");
+//    user.setState("paraíba");
+//    user.setPhoto("foto");
+//    gu.atualizar(user);
 //    u.atualizar(user);
 //        System.out.println("Executando...");
 //    GerenciadorUser managerUser = new GerenciadorUser();

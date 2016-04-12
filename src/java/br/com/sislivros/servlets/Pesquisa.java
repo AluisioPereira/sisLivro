@@ -37,7 +37,7 @@ public class Pesquisa extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String acao = request.getParameter("acao");
+//        String acao = request.getParameter("acao");
         String nome = request.getParameter("nome");
         GerenciadorUser gUser = new GerenciadorUser();
         List <Usuario> list = gUser.listarPorNome(nome);

@@ -28,7 +28,9 @@ public class Logout extends HttpServlet {
             boolean file = new File(this.getServletContext().getRealPath("/img/enough-pro-login-registration.jpg")).delete();
 
             HttpSession session = request.getSession();
+            session.removeAttribute("listSolic");
             session.removeAttribute("user");
+            session.removeAttribute("qtde");
             session.invalidate();
             response.sendRedirect("index.jsp");
        

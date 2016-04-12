@@ -4,6 +4,7 @@
 <%@page import="java.util.List"%>
 <%@page import="br.com.sislivros.manager.GerenciadorUser"%>
 <%@page import="br.com.sislivros.valueobject.Usuario"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%
     Usuario user = (Usuario) session.getAttribute("user");
@@ -44,7 +45,7 @@
 			<div class="" id="perf">
 				<a href="" id="perfil" alt=""><img src="<%=user.getPhoto()%>" title=""></a>
 				<a href="" ><h3> Olá, <%= name[0]%>!</h3></a>
-				<a href="" ><h4>Notificações</h4></a>
+				<a href="#" onClick="document.getElementById('notifications').style.display='block';"><h4>Notificações</h4></a>
 				
 
 			</div> 
@@ -87,22 +88,14 @@
 			</nav>
 			</div>
                     <section>
-                        <script>
-                            function abrirPagina(pagina){
-                            location.href = pagina;
-                        }
-                        </script>            
+       
 
-                    <h1>xxx: ${param.param}</h1>
+                    <h1>${param.param}</h1>
                     <h1>${user.name}</h1>
                     <h1>${user.nick}</h1>
                     <h1>${user.email}</h1>
 
-                    <h1>Hello World!</h1>
-
-                
-
-
+                   
             <script>
 
 		$('#images').on('change', function(e){
