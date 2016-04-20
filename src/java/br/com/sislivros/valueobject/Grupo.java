@@ -7,25 +7,36 @@ package br.com.sislivros.valueobject;
  */
 public class Grupo {
     private int id;
-    private Usuario usuario;
     private String name;
+    private String photo;
     private String description;
 
     public Grupo() {}
     
-    public Grupo(String name, String description) {
+    public Grupo(int id, String name, String description) {
+        this.id = id;
         this.name = name;
+        this.photo = photo;
         this.description = description;
     }
-    
-    public String getEmailUsuario(){
-        return usuario.getEmail();
-    }
-
+   
     public int getId() {
         return id;
     }
 
+    public void setI(int id) {
+        this.id = id;
+    }
+ 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+    
+    
     public String getName() {
         return name;
     }
@@ -44,8 +55,10 @@ public class Grupo {
 
     @Override
     public String toString() {
-        return "Grupo{" + "id=" + id + ", name=" + name + ", description=" + description + '}';
+        return "Grupo{" + "id=" + id +  ", name=" + name + ", photo=" + photo + ", description=" + description + '}';
     }
+
+   
 
     
 }

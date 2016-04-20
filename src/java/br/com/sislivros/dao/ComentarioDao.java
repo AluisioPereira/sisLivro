@@ -7,7 +7,8 @@ package br.com.sislivros.dao;
 
 import br.com.sislivros.conection.Conexao;
 import br.com.sislivros.interfaces.ComentarioDaoIf;
-import br.com.sislivros.valueobject.Comentario;
+import br.com.sislivros.valueobject.ComentarioLivro;
+import br.com.sislivros.valueobject.ComentarioLivro;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -19,13 +20,13 @@ import java.util.Date;
  */
 public class ComentarioDao implements ComentarioDaoIf{
 
-    private Comentario coment;
+    private ComentarioLivro coment;
     private Connection conn;
     private PreparedStatement stm;
     
     @Override
-    public boolean criarComentario(Comentario coment) {
-        String sql = "INSERT INTO ComentarioLivro (usuario, comentario, comData) VALUES (?, ?, ?)";
+    public boolean criarComentario(ComentarioLivro coment) {
+        String sql = "INSERT INTO ComentarioLivro (usuario, comentario, comData, foto) VALUES (?, ?, ?, ?)";
         try{
         conn = Conexao.conexao();
         stm = Conexao.openStatement(sql);
@@ -64,9 +65,8 @@ public class ComentarioDao implements ComentarioDaoIf{
         return false;
     }
     
-    public boolean montarComentario(String usuario, String comentario, Date data){
-        coment = new Comentario(usuario, comentario, data);
-        
+    public boolean montarComentario(int id, String usuario, String comentario, Date data){
+        coment = new ComentarioLivro(id, usuario, comentario, data);
         return criarComentario(coment);
     }
     

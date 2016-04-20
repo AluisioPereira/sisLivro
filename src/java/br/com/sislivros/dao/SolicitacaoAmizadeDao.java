@@ -49,6 +49,30 @@ public class SolicitacaoAmizadeDao implements SolicitacaoAmizadeDaoIf {
     }
     
     @Override
+    public List<SolicitacaoAmizade> mySolicitation(String email){
+        List list = new ArrayList();
+        String sql = "SELECT * FROM SolicitacaoAmizade WHERE solicitacaoEnviada = ?";
+        try{
+            conn = Conexao.conexao();
+            stm = Conexao.openStatement(sql);
+            stm.setString(1, email);
+            ResultSet result = stm.executeQuery();
+            while(result.next()){
+                solicAmizade = new SolicitacaoAmizade();
+                solicAmizade.setSolicitacaoEnviada(result.getString("solicitacaoEnviada"));
+                solicAmizade.setSolicitacaoRecebiada(result.getString("solicitacaoRecebida"));
+                list.add(solicAmizade);
+            }
+        }catch(SQLException | ClassNotFoundException ex){
+            
+        }finally{
+            Conexao.closeConnection(conn);
+            Conexao.closeStatement(stm);
+        }
+        return list;
+    }
+    
+    @Override
     public List<Usuario> listar(String email){
         List list = new ArrayList();
         String sql = "SELECT * FROM SolicitacaoAmizade s, Usuario u WHERE s.solicitacaoEnviada = u.email AND solicitacaoRecebida = ?";
@@ -85,12 +109,15 @@ public class SolicitacaoAmizadeDao implements SolicitacaoAmizadeDaoIf {
     
 
     @Override
-    public boolean excluir(String email) {
-        String sql = "DELETE FROM SolicitacaoAmizade WHERE solicitacaoEnviada = ?";
+    public boolean excluir(String solicEnviada, String solicRecebida) {
+        String sql = "DELETE FROM SolicitacaoAmizade WHERE (solicitacaoEnviada = ? AND solicitacaoRecebida = ?) OR (solicitacaoRecebida = ? AND solicitacaoEnviada = ?)";
         try{
            conn = Conexao.conexao();
            stm = Conexao.openStatement(sql);
-           stm.setString(1, email);
+           stm.setString(1, solicEnviada);
+           stm.setString(2, solicRecebida);
+           stm.setString(3, solicEnviada);
+           stm.setString(4, solicRecebida);
            stm.executeUpdate();
            return true;
         }catch(ClassNotFoundException | SQLException ex){
@@ -126,11 +153,12 @@ public class SolicitacaoAmizadeDao implements SolicitacaoAmizadeDaoIf {
     }
     
     @Override
-    public boolean clicked(){
-        String sql = "UPDATE SolicitacaoAmizade SET visualizado = TRUE";
+    public boolean clicked(String email){
+        String sql = "UPDATE SolicitacaoAmizade SET visualizado = TRUE WHERE solicitacaoRecebida = ?";
         try{
            conn = Conexao.conexao();
            stm = Conexao.openStatement(sql);
+           stm.setString(1, email);
            stm.executeUpdate();
            return true;
         }catch(ClassNotFoundException | SQLException ex){
@@ -141,4 +169,5 @@ public class SolicitacaoAmizadeDao implements SolicitacaoAmizadeDaoIf {
         }
         return false;
     }
+
 }

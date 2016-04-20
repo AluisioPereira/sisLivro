@@ -64,15 +64,19 @@
                 <%
                   GerenciadorUser gUser = new GerenciadorUser();
                   String emailjoin = request.getParameter("newemail");
-                  if (emailjoin == ""){
+                  if (emailjoin == "" || emailjoin == null){
+                      String retorno = "Por favor preeencha o campo E-mail";
+                      session.setAttribute("mensagem", retorno);
                       RequestDispatcher re = request.getRequestDispatcher("login.jsp"); 
                       re.forward(request, response);
+                      return;
                   }
                   if(gUser.verificaEmail(emailjoin)){
                       String retorno = "Email existente";
-                      request.setAttribute("mensagem", retorno);
+                      session.setAttribute("mensagem", retorno);
                       request.getRequestDispatcher("login.jsp").forward(request, response);
                   }
+              
                 %>
                 
                 <form action="recuperardados" method="post" enctype="multipart/form-data">
@@ -80,7 +84,7 @@
                     <div class="style">	
                     <p >
                         <label  id="user" data-icon="u"> Email: </label>
-                        <input type="" value="" name="email" placeholder="Ex: meuemail@email.com" class="user">
+                        <input type="" value="<%=emailjoin%>" name="email" placeholder="Ex: meuemail@email.com" class="user">
                         <h6 id="erremail"></h6>
                     </p>
                         <p>

@@ -6,6 +6,7 @@
 package br.com.sislivros.manager;
 
 import br.com.sislivros.factory.DaoFactory;
+import br.com.sislivros.valueobject.SolicitacaoAmizade;
 import br.com.sislivros.valueobject.Usuario;
 import java.util.List;
 
@@ -23,16 +24,20 @@ public class GerenciadorSolicitacaoAmizade {
         return DaoFactory.createFactory().criaSolicitacaoAmizadeDao().listar(email);
     }
     
-    public boolean excluirSolicitacao(String email){
-        return DaoFactory.createFactory().criaSolicitacaoAmizadeDao().excluir(email);
+    public List<SolicitacaoAmizade> mySolicitation(String email){
+        return DaoFactory.createFactory().criaSolicitacaoAmizadeDao().mySolicitation(email);
+    }
+    
+    public boolean excluirSolicitacao(String solicEnviada, String SolicRecebida){
+        return DaoFactory.createFactory().criaSolicitacaoAmizadeDao().excluir(solicEnviada, SolicRecebida);
     }
     
     public int qtdeSolicitacoes(String email){
         return DaoFactory.createFactory().criaSolicitacaoAmizadeDao().qtde(email);
     }
     
-    public boolean clicked(){
-        return DaoFactory.createFactory().criaSolicitacaoAmizadeDao().clicked();
+    public boolean clicked(String email){
+        return DaoFactory.createFactory().criaSolicitacaoAmizadeDao().clicked(email);
     }
     
 }

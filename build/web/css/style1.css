@@ -342,18 +342,20 @@ textarea:focus, input:focus, select:focus {
       /*border: 1px solid #000;*/
       border-radius: 10px;
       /*box-shadow: inset 1px 1px 10px #999999;*/
+      height: 500px;
+      overflow: hidden;
   }
   section h3{
       float: left;
       width: 90%;
-      margin: 2%;
+      margin: 1%;
       /*margin-top: 22%;*/
       border-top-left-radius: 10px; 
   }
 
   
   section .informations{
-      margin: 6% 5% 0 1%;
+      margin: 3% 5% 0 1%;
       float: right;
       width: 40%;
       text-align: left; 
@@ -368,7 +370,7 @@ textarea:focus, input:focus, select:focus {
      
       width: 42%;
       height: 63%;
-      margin: 6% 0 10% 12%;
+      margin: 2% 0 10% 12%;
       border-radius: 10px;
   }
   

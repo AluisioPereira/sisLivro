@@ -5,13 +5,19 @@
  */
 package br.com.sislivros.conection;
 
+import br.com.sislivros.dao.AmizadeDao;
 import br.com.sislivros.dao.UsuarioDao;
+import br.com.sislivros.manager.GerenciadorAmizade;
+import br.com.sislivros.manager.GerenciadorComentarioGrupo;
+import br.com.sislivros.manager.GerenciadorGrupo;
 import br.com.sislivros.manager.GerenciadorLivros;
 import br.com.sislivros.manager.GerenciadorSolicitacaoAmizade;
 import br.com.sislivros.manager.GerenciadorUser;
+import br.com.sislivros.valueobject.Grupo;
 import br.com.sislivros.valueobject.Livro;
 import br.com.sislivros.valueobject.Usuario;
 import java.sql.Date;
+import java.util.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -20,59 +26,57 @@ import java.util.List;
 public class TestConection {
     
     public static void main(String args[]){
-        GerenciadorSolicitacaoAmizade g = new GerenciadorSolicitacaoAmizade();
+//        GerenciadorSolicitacaoAmizade g = new GerenciadorSolicitacaoAmizade();
 //        System.out.println(g.qtdeSolicitacoes("aluisio11@hotmail.com"));
-        System.out.println(g.qtdeSolicitacoes("email@gmail"));
-        
-//    Usuario user = new Usuario();
-//    GerenciadorUser gu = new GerenciadorUser();
-//    
-//    UsuarioDao u = new UsuarioDao();
-//    
-//    user.setName("xxxxx");
-//    user.setNick("Zil12xxxx34");
-//    user.setEmail("zilderlan123@gmail.com");
-//    user.setSenha("12345");
-//    user.setDataNasc(convertDate("10/10/1010"));
-//    user.setCity("Cajazeiras");
-//    user.setState("paraíba");
-//    user.setPhoto("foto");
-//    gu.atualizar(user);
-//    u.atualizar(user);
-//        System.out.println("Executando...");
-//    GerenciadorUser managerUser = new GerenciadorUser();
-//    //managerUser.userAdd(user);
-//    user.setNick("a");
-//    user.setSenha("a");
-//    
-//    Usuario s = managerUser.userLogin(user);
-//        System.out.println("Inicio Login User");
-//        System.out.println("Apelido: "+s.getNick());
-//        System.out.println("Nome: "+s.getEmail());
-//        System.out.println("Fim Login User");
-//    
-//    
-//    List<Usuario> list = managerUser.returnAll();
-//    for (Usuario u: list){
-//        System.out.println(u.getName());
-//    }
-//testUpdate();
+//        System.out.println(g.qtdeSolicitacoes("email@gmail"));
 
+        
+    Usuario user = new Usuario();
+//    GerenciadorUser g1 = new GerenciadorUser();
+//    user.setCity("cidade");
+//    user.setDataNasc(convertDate("2010/10/10"));
+//    user.setEmail("aluisio.montehorebe@gmail.com.br");
+//    user.setName("Zilderlan leite da Silva");
+//    user.setNick("Zilderlan");
+//    user.setPhoto("foto");
+//    user.setSenha("s");
+//    user.setState("pb");
+//        System.out.println(g1.userAdd(user));
     
-//    user.setNick("");
-//    GerenciadorLivros gLivros = new GerenciadorLivros();
-//    Livro l = new Livro();
-//    l.setTitulo("titulo");
-//    l.setAno(1900);
-//    l.setEditora("editora");
-//    l.setAutores("autores");
-//    l.setArea("area");
-//    l.setIsbn("00000000");
-//    l.setFoto("foto");
-        //System.out.println(gLivros.criaLivro(l));
-    
+//        System.out.println(g1.buscarUsuario("fulado@gmail.com"));
+        GerenciadorSolicitacaoAmizade ga = new GerenciadorSolicitacaoAmizade();
+//        System.out.println(ga.listarSolicitacoes("aluisio.montehorebe@gmail.com"));
+        GerenciadorAmizade gAmi = new GerenciadorAmizade();
+//        System.out.println(gAmi.excluirSolicitacao("zilderlan.leite@gmail.com", "aluisio.montehorebe@gmail.com"));
+//        System.out.println(gAmi.excluirSolicitacao("zilderlan.leite@gmail.com", "fulado@gmail.com"));
+//        gAmi.addFriend("zilderlan.leite@gmail.com", "aluisio.montehorebe@gmail.com");
+//        System.out.println(ga.excluirSolicitacao("zilderlan.leite@gmail.com", "fulado@gmail.com"));
+//        System.out.println(gAmi.listAmizade("aluisio.montehorebe@gmail.com"));
+        
+//        System.out.println(new AmizadeDao().lisFriends("zilderlan.leite@gmail.com"));
+//        System.out.println(new AmizadeDao().lisFriends("fulado@gmail.com"));
+                
+//        List<Usuario> l = ga.listarSolicitacoes("aluisio.montehorebe@gmail.com");
+        
+
+//        System.out.println(g1.tornarAdmin("aluisio11@hotmail.com"));
+        GerenciadorGrupo gp = new GerenciadorGrupo();
+//        System.out.println(gp.excluirUser(694054256, "zilderlan.leite@gmail.com"));
+//        System.out.println(gp.retornarUsuarioGrupo(694054256, "aluisio.montehorebe@gmail.com"));
+//        System.out.println(new java.util.Date().getTime());
+//        System.out.println(new java.util.Date());
+        GerenciadorComentarioGrupo gCoG = new GerenciadorComentarioGrupo();
+//        System.out.println(gCoG.addComentGrupo("aluisio.montehorebe@gmail.com",694054256 , "xxxxxxxxx", "ccc", "name"));
+//        System.out.println(gCoG.listComment());
+        GerenciadorLivros gl = new GerenciadorLivros();
+        System.out.println(gl.pesquisarporNome("o"));
+        
+//        Livro l = new Livro("aluisio.montehorebe@gmail.com", "xxx", 2015, "xxxx", "xxxx", "foto", "exatas", "123456");
+//        System.out.println(l);
+//        System.out.println(gl.criaLivro(l));
+//        System.out.println("lista de livros: "+gl.retornarLivro(10));
     }
-    
+//    
     
     
     public static Date convertDate (String date){

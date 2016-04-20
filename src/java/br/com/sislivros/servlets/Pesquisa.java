@@ -5,7 +5,9 @@
  */
 package br.com.sislivros.servlets;
 
+import br.com.sislivros.manager.GerenciadorGrupo;
 import br.com.sislivros.manager.GerenciadorUser;
+import br.com.sislivros.valueobject.Grupo;
 import br.com.sislivros.valueobject.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -25,23 +27,17 @@ import org.apache.jasper.tagplugins.jstl.core.ForEach;
 @WebServlet(name = "Pesquisa", urlPatterns = {"/Pesquisa"})
 public class Pesquisa extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession();
 //        String acao = request.getParameter("acao");
         String nome = request.getParameter("nome");
+        GerenciadorGrupo gGroup = new GerenciadorGrupo();
+        List<Grupo> listGroup = gGroup.returnGroupName(nome);
+        session.setAttribute("listGroup", listGroup);
         GerenciadorUser gUser = new GerenciadorUser();
         List <Usuario> list = gUser.listarPorNome(nome);
-        HttpSession session = request.getSession();
         session.setAttribute("list", list);
         getServletContext().setAttribute("pesquisa", list);
         request.getRequestDispatcher("Pesquisa.jsp").forward(request, response);
@@ -53,7 +49,9 @@ public class Pesquisa extends HttpServlet {
             out.println("<title>Servlet Pesquisa</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<p>Servlet Pesquisa</p>"); 
+            for(Grupo g: listGroup){
+            out.println("<p>Servlet Pesquisa"+g.getName()+"</p>"); 
+            }
             for(Usuario user: list)
             out.println("<h1>Servlet Pesquisa at " + user.getName() + "</h1>");
             out.println("</body>");

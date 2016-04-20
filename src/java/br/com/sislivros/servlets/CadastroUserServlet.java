@@ -54,21 +54,6 @@ public class CadastroUserServlet extends HttpServlet {
         String state = (String) request.getAttribute("state");
         String image = (String) request.getAttribute("caminho");
         
-        String validaName = UsuarioDao.validarEmail(name);
-        String validaEmail = UsuarioDao.validarEmail(email);
-        
-//        if (validaName.length() > 0
-//            || validaEmail.length() > 0
-//                ){
-//            request.setAttribute("errname", "vvvvvvvvvvv");
-//            request.setAttribute("erremail", validaEmail);
-////            request.getRequestDispatcher("login.jsp").forward(request, response);
-//            response.getWriter().println(validaName.length());
-//            response.getWriter().println(name);
-//            response.getWriter().println(validaEmail.length());
-//            response.getWriter().println(email);
-//        }
-
         
         Usuario user = new Usuario();
         user.setName(name);
@@ -82,11 +67,14 @@ public class CadastroUserServlet extends HttpServlet {
 
 
         GerenciadorUser managerUser = new GerenciadorUser();
-        managerUser.userAdd(user);
+        response.getWriter().println(user);
+        response.getWriter().println(managerUser.userAdd(user));
         Usuario usuario = managerUser.userLogin(user);
         HttpSession session = request.getSession();
         session.setAttribute("user", usuario);
-        response.sendRedirect("index.jsp");
+//        response.getWriter().println(usuario);
+//        response.getWriter().println(user);
+//        response.sendRedirect("index.jsp");
 
     }
 

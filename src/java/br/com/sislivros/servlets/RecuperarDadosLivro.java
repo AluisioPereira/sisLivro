@@ -59,16 +59,17 @@ public class RecuperarDadosLivro extends HttpServlet {
                         response.getWriter().println("ContentType:" + item.getContentType());
                         response.getWriter().println("C:\\uploads" + File.separator + new Date().getTime() + "_" + item.getName());
                         if (item.getName() == "" || item.getName() == null) {
-                            caminho = "xxxxxxxxxxxxxxxxxxxxxxxx";
+                            caminho = "";
                         } else {
-                            caminho = ("C:\\" + File.separator + new Date().getTime() + "_" + item.getName());
+                            caminho = ("img"+File.separator + new Date().getTime() + "_" + item.getName());
                         }
                         response.getWriter().println("Caminho: " + caminho);
                         request.setAttribute("caminho", caminho);
-                        File uploadedFile = new File("C:\\uploads" + File.separator + new Date().getTime() + "_" + item.getName());
+//                        File uploadedFile = new File("C:\\TomCat\\apache-tomcat-8.0.21\\webapps\\sislivros\\img" + caminho);
+                        File uploadedFile = new File("E:\\Documentos\\NetBeansProjects\\sislivrosgit\\sisLivro\\web\\" + caminho);
                         item.write(uploadedFile);
                         request.setAttribute("caminho", caminho);
-//                        request.getRequestDispatcher("CadastroLivroServlet").forward(request, response);
+                      request.getRequestDispatcher("CadastroLivroServlet").forward(request, response);
                     }
                 }
             } catch (Exception e) {

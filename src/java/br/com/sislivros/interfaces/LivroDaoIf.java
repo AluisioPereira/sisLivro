@@ -22,8 +22,12 @@ public interface LivroDaoIf {
     
     public Livro pesquisar(int isbn);
     
-    public boolean remover(int isbn);
+    public boolean remover(int cod);
     
     public boolean remover(String nome);
+    
+    public Livro retornatLivro(int cod);
+    
+    public Livro montarLivro(String idUsuario, String titulo, int ano, String editora, String autores, String foto, String area, String isbn);
     
 }

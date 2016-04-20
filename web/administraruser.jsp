@@ -29,7 +29,7 @@
             @import "css/jquery.dataTables.css";
         </style>
         <script src="js/ajax.js"></script>
-    <script src="js/tabela.js"></script>
+    <script src="js/tabela1.js"></script>
     <script src="js/jquery.js"></script>
     <script  src="js/jquery.dataTables.js"></script>
     <script>
@@ -111,7 +111,7 @@
                     <img src="img/edit.jpg" title>
             </button>
                 <form action="DeletarUsuario" method="post" class="delete-user">
-                    <input class='formContato' type='text' name='delete' id='delete' value='' onchange="alteraDiv()">
+                    <input class='formContato' type='text' name='delete' id='delete' value='' style="display: none;" onchange="alteraDiv()">
                     
                     <button class="remove" type="submit"  >
                         <img src="img/remove.png" title="">
@@ -208,7 +208,7 @@
                     <td ><%= user.getName()%> </td>
                     <td ><%= user.getEmail()%></td>
                     <td ><%= user.getCity()%> </td>
-                    <td ><%= user.getTipo()%><a href=""><%=admin%></a></td>
+                    <td ><%= user.getTipo()%><a href="tornarAdministrador?email=<%= user.getEmail()%>"><%=admin%></a></td>
                 </tr>
               <%}%>
                         

@@ -5,14 +5,23 @@
  */
 package br.com.sislivros.interfaces;
 
+import br.com.sislivros.valueobject.Amizade;
+import br.com.sislivros.valueobject.Usuario;
+import java.util.List;
+
 /**
  *
  * @author Zilderlan
  */
 public interface AmizadeDaoIf{
     
-    public boolean aceitarAmiizade();
+    public boolean aceitarAmiizade(String solicEnviada, String SolicRecebida);
     
-    public boolean excluirAmiizade();
+    
+    public List<Usuario> lisFriends(String email);
+    
+    public List<Amizade> mySolicitation(String email);
+    
+    public boolean excluirAmizade(String enviado, String recebido);
     
 }

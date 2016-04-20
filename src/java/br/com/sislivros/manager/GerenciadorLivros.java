@@ -23,4 +23,21 @@ public class GerenciadorLivros {
         return DaoFactory.createFactory().criaLivroDao().pesquisarPorNome(nome);
     }
     
+    public List<Livro> listarTodos(){
+        return DaoFactory.createFactory().criaLivroDao().listarTodos();
+    }
+    
+    public Livro montarLivro(String idUsuario, String titulo, int ano, String editora, String autores, String foto, String area, String isbn){
+        return DaoFactory.createFactory().criaLivroDao().montarLivro(idUsuario,titulo, ano, editora, autores, foto, area, isbn);
+    }
+    
+    public boolean escluirLivro(int cod){
+        return DaoFactory.createFactory().criaLivroDao().remover(cod);
+    }
+    
+    public Livro retornarLivro(int cod){
+        return DaoFactory.createFactory().criaLivroDao().retornatLivro(cod);
+    }
+
+    
 }

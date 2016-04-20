@@ -38,7 +38,7 @@ CREATE TABLE Livro(
 	isbn INTEGER NOT NULL,
 	dataDeCadastro DATE NOT NULL,
 	PRIMARY KEY (id),	
-	FOREIGN KEY (idUsuario) REFERENCES Usuario (id)
+	FOREIGN KEY (idUsuario) REFERENCES Usuario (id)ON DELETE CASCADE,
 );
 
 CREATE TABLE ComentarioLivro(
@@ -47,7 +47,7 @@ CREATE TABLE ComentarioLivro(
     comentario VARCHAR(250) NOT NULL,
     comData DATE,
     PRIMARY KEY (id),
-    FOREIGN KEY (usuario) REFERENCES Usuario (email)
+    FOREIGN KEY (usuario) REFERENCES Usuario (email)ON DELETE CASCADE,
 );
 
 ﻿ CREATE TABLE solicitacaoAmizade(
@@ -62,9 +62,9 @@ CREATE TABLE ComentarioLivro(
 );
 
 ﻿CREATE TABLE Amizade(
-    id SERIAL UNIQUE NOT NULL,
-		solicitacaoEnviada VARCHAR(60) UNIQUE NOT NULL,
-		solicitacaoRecebida VARCHAR(60) UNIQUE NOT NULL,
+--     id SERIAL UNIQUE NOT NULL,
+		solicitacaoEnviada VARCHAR(60) NOT NULL,
+		solicitacaoRecebida VARCHAR(60) NOT NULL,
 		PRIMARY KEY (solicitacaoEnviada,solicitacaoRecebida),
 		FOREIGN KEY (solicitacaoEnviada) REFERENCES Usuario (email) ON DELETE CASCADE,
 		FOREIGN KEY (solicitacaoRecebida) REFERENCES Usuario (email) ON DELETE CASCADE
@@ -72,12 +72,32 @@ CREATE TABLE ComentarioLivro(
 
 
 CREATE TABLE Grupo(
-	id SERIAL NOT NULL UNIQUE,
-	idUsuario VARCHAR(60) NOT NULL,
+	id INTEGER NOT NULL,
+        foto VARCHAR(300), 
 	nome VARCHAR(25) NOT NULL UNIQUE,
 	descricao VARCHAR(200) NOT NULL,
-	PRIMARY KEY (id),
-	FOREIGN KEY (idUsuario) REFERENCES Usuario (email) ON DELETE CASCADE
-	/* Não é bom colocar ON DELETE CASCADE nestes que referencias outra tabela não? (Ele é usado em conjunto com ON DELETE ou ON UPDATE. Isso significa que os dados criança é excluído ou atualizado quando os dados pai é excluído ou atualizado.) nas outras tabelas também.*/
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE ParticipaGrupo(
+    idGrupo INTEGER NOT NULL,
+    idUsuario VARCHAR(60) NOT NULL,
+    PRIMARY KEY(idGrupo, idUsuario),
+    FOREIGN KEY (idGrupo) REFERENCES Grupo (id) ON DELETE CASCADE,
+    FOREIGN KEY (idUsuario) REFERENCES Usuario (email) ON DELETE CASCADE 
+);
+
+CREATE TABLE ComentarioGrupo (
+	idComentario SERIAL NOT NULL,
+	idUsuario VARCHAR(60) NOT NULL,
+	nameUsuario VARCHAR(60) NOT NULL,
+	idGrupo INTEGER NOT NULL,
+        comentario TEXT,
+        dataComment DATE NOT NULL,
+        imagem VARCHAR(400),
+	PRIMARY KEY (idUsuario, idGrupo, idComentario),
+	FOREIGN KEY (idUsuario) REFERENCES Usuario(email),
+	FOREIGN KEY (nameUsuario) REFERENCES Usuario(nome),
+	FOREIGN KEY (idGrupo) REFERENCES Grupo(id)
 );
 

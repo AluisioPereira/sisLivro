@@ -34,4 +34,7 @@ public interface UsuarioDaoIf {
     
     public boolean verificaEmail(String email);
     
+    public Usuario buscarUser(String email);
+    
+    
 }

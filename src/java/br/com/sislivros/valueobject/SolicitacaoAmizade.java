@@ -43,10 +43,13 @@ public class SolicitacaoAmizade {
     public boolean isVisializado() {
         return visializado;
     }
-
+    public boolean getVisialisado(){
+        return this.visializado;
+    }
     public void setVisializado(boolean visializado) {
         this.visializado = visializado;
     }
+    
 
     @Override
     public String toString() {

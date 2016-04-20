@@ -1,8 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package br.com.sislivros.servlets;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -61,9 +58,12 @@ public class RecuperarDados extends HttpServlet {
                                                      caminho = "img\\usuario.jpg";
                                                 }else
                                                  {
+                                                     
                                                     caminho = "img"+ File.separator + new Date().getTime() + "_" + item.getName();
                                                     resp.getWriter().println("Caminho: " + caminho);
-                                                    File uploadedFile = new File("C:\\TomCat\\apache-tomcat-8.0.21\\webapps\\sislivros\\"+caminho);
+                                                    File uploadedFile = new File("E:\\Documentos\\NetBeansProjects\\sislivrosgit\\sisLivro\\web\\" + caminho);
+
+//                                                    File uploadedFile = new File("C:\\TomCat\\apache-tomcat-8.0.21\\webapps\\sislivros\\"+caminho);
                                                     item.write(uploadedFile);
 
                                                  }

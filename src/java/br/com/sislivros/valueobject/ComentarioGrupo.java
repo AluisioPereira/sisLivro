@@ -11,23 +11,49 @@ import java.util.Date;
  *
  * @author Zilderlan
  */
-public class Comentario {
+public class ComentarioGrupo
+{
     
     private int id;
+    private int idGrupo;
+    private String user;
     private String email;
     private String comentario;
+    private String photo;
     private Date date;
 
-    public Comentario() {}
-    
-    public Comentario(String email, String comentario, Date date) {
+    public ComentarioGrupo() {}
+
+    public ComentarioGrupo(int id, int idGrupo, String user, String email, String comentario, String photo, Date date) {
+        this.id = id;
+        this.idGrupo = idGrupo;
+        this.user = user;
         this.email = email;
         this.comentario = comentario;
+        this.photo = photo;
         this.date = date;
     }
+    
+
 
     public int getId() {
         return id;
+    }
+
+    public int getIdGrupo() {
+        return idGrupo;
+    }
+
+    public void setIdGrupo(int idGrupo) {
+        this.idGrupo = idGrupo;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public void setId(int id) {
@@ -58,11 +84,20 @@ public class Comentario {
         this.date = date;
     }
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
     @Override
     public String toString() {
-        return "Comentario{" + "id=" + id + ", email=" + email + ", comentario=" + comentario + ", date=" + date + '}';
+        return "ComentarioGrupo{" + "id=" + id + ", idGrupo=" + idGrupo + ", user=" + user + ", email=" + email + ", comentario=" + comentario + ", photo=" + photo + ", date=" + date + '}';
     }
-    
+
+  
     
     
 }

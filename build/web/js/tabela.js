@@ -10,7 +10,7 @@
         var data = table.row( this ).data();
         for (var i = 0; i < valor.length; i++){
             alert(data);
-            if (valor[i] == data[1]){
+            if (valor[i] == data[0]){
                 aux = 1;
                 for (var j = i; j < valor.length; j++){
                     valor[j] = valor[j+1];
@@ -25,7 +25,7 @@
             }
         }
         if (aux == 0){
-            valor[cont] = data[1];
+            valor[cont] = data[0];
             cont++;
 //            alert("if");
 //            alert(valor);

@@ -5,6 +5,7 @@
  */
 package br.com.sislivros.interfaces;
 
+import br.com.sislivros.valueobject.SolicitacaoAmizade;
 import br.com.sislivros.valueobject.Usuario;
 import java.util.List;
 
@@ -16,12 +17,15 @@ public interface SolicitacaoAmizadeDaoIf {
     
     public boolean add(String enviar, String receber);
     
-    public boolean excluir(String email);
+    public boolean excluir(String solicEnviada, String solicRecebida);
+    
+    public List<SolicitacaoAmizade> mySolicitation(String email);
     
     public List<Usuario> listar(String email);
     
     public int qtde(String email);
     
-    public boolean clicked();
+    public boolean clicked(String s);
+    
     
 }

@@ -11,16 +11,18 @@ import java.util.Date;
  *
  * @author Zilderlan
  */
-public class Comentario {
+public class ComentarioLivro {
     
     private int id;
+    private int idLivro;
     private String email;
     private String comentario;
     private Date date;
 
-    public Comentario() {}
+    public ComentarioLivro(){}
     
-    public Comentario(String email, String comentario, Date date) {
+    public ComentarioLivro(int idLivro, String email, String comentario, Date date) {
+        this.idLivro = idLivro;
         this.email = email;
         this.comentario = comentario;
         this.date = date;
@@ -32,6 +34,14 @@ public class Comentario {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getIdLivro() {
+        return idLivro;
+    }
+
+    public void setIdLivro(int idLivro) {
+        this.idLivro = idLivro;
     }
 
     public String getEmail() {
@@ -60,7 +70,7 @@ public class Comentario {
 
     @Override
     public String toString() {
-        return "Comentario{" + "id=" + id + ", email=" + email + ", comentario=" + comentario + ", date=" + date + '}';
+        return "ComentarioLivro{" + "id=" + id + ", idLivro=" + idLivro + ", email=" + email + ", comentario=" + comentario + ", date=" + date + '}';
     }
     
     

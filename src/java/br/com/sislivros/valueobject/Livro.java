@@ -12,6 +12,8 @@ import java.util.Objects;
  * @author Zilderlan
  */
 public class Livro {
+    private int id;
+    private String idUsuario;
     private String titulo;
     private int ano;
     private String editora;
@@ -19,6 +21,36 @@ public class Livro {
     private String foto;
     private String area;
     private String isbn;
+
+    public Livro(String idUsuario, String titulo, int ano, String editora, String autores, String foto, String area, String isbn) {
+        this.idUsuario = idUsuario;
+        this.titulo = titulo;
+        this.ano = ano;
+        this.editora = editora;
+        this.autores = autores;
+        this.foto = foto;
+        this.area = area;
+        this.isbn = isbn;
+    }
+
+    public Livro() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -105,12 +137,7 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Livro{" + "titulo=" + titulo + ", ano=" + ano + ", editora=" + editora + ", autores=" + autores + ", foto=" + foto + ", area=" + area + ", isbn=" + isbn + '}';
+        return "Livro{" + "id=" + id + ", idUsuario=" + idUsuario + ", titulo=" + titulo + ", ano=" + ano + ", editora=" + editora + ", autores=" + autores + ", foto=" + foto + ", area=" + area + ", isbn=" + isbn + '}';
     }
-    
-    
-    
-    
-    
-    
+  
 }

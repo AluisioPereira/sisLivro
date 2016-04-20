@@ -4,7 +4,7 @@
 
   body{width: 100%; height: 100%; background: #fff; font-size: 100%;}
 
-  header {  width: 100%; height: 3em; background: #ebebeb;z-index: 2;; overflow: hidden; box-shadow: 0px 3px 8px #000;}
+  header {position: fixed; width: 100%; height: 3em; background: #ebebeb;z-index: 2; overflow: hidden; box-shadow: 0px 3px 8px #000;}
 
   header form #search{width: 25%; height: 1.8em; margin: .7% 0% 0% 2%; }
 
@@ -14,20 +14,21 @@
   header #perf a{display: inline-block; margin: 0 1%; padding: 0 2%;}
   header #perf a img{width: 42px; height: 42px; margin: 0 0 0 0; border-radius: 50px;}
   header #perf a h3, h4{float: left; padding: 0 0 12% 0; }
-  header #perf a h4{margin: -0% 0% 6% 0;}
+  header #perf a h4{margin: 0% 0% 5% 0%;}
+  header #perf a .notif{color: red;}
 
-  header #menu a img{float: right; margin: -1.6% 15% 0 0; padding: 0 0 10% 0;}
-  article .left{float: left; margin: 3% 0% 0% 4%;   background: #fff; width: 14%; border-right: 2px solid #ebebeb;}
+  header #menu a img{float: right; margin: -1.6% 15% 0 0; padding: 0 0 10% 0; }
+  article .left{float: left; margin: 5% 0% 0% 4%;   background: #fff; width: 14%; border-right: 2px solid #ebebeb;}
 
   .nav-left ul li{list-style: none; margin: 3.5% 0% 0% 3%;}
   a{text-decoration: none; color: #000000;}
   .nav-left ul li a{text-decoration: none; }
-  article section{width: 75%;height: 400px; float: left; margin: 1.7% 0 0 2%; ;}
+  article section{width: 75%;height: auto; float: left; margin: 1.7% 0 0 2%;}
   article section .form{width: 80%; float: left; height: 300px; border: 1px solid #f5f5f5; border-radius: 10px ;margin: 2.5% 0 0 4%;}
   .userSearch{ margin: 10% 0 0 3.5%; width: 50%; }
   section .userSearch img{float: left;width: 70px; height: 85px; margin: 0 2.5% 0 1%;}
   section .userSearch a{ padding: 0% 0 0% 0%; }
-  .notifications{float: left; margin: -25% 0 0 10%; padding: 3% 2% 2% 2%; width: 30%; border: 1px solid #f3f3f3; background: #fff; display: none;}
+  .notifications{position: fixed; float: left; margin: 8% 0 0 30%; padding: 3% 2% 2% 2%; width: 30%; border: 1px solid #000; background: #fff; display: none;}
   .notifications .friend img{width: 75px; height: 90px; float: left;}
   .notifications .friend a{float: left; margin: 0% 0 0 3%; width: 70%; font: bold;} 
   .notifications .friend .cancel-not{height: 25px; float: right; margin: 20px 10px 0 0}
@@ -38,9 +39,60 @@
   article section form .photo{float: left; width: 15.5%; float: right; margin: 2% 13.3% 0 0; height: 162px;}
   article section form .photo img {float: right;width: 130px; height: 160px; border: 1px solid #ccc; border-top-left-radius: 10px; border-top-right-radius: 10px;}
   
-  #criarGrupo{float: left; margin: -35% 0 0 38%; padding: 3% 2% 2% 2%; width: 44%; border: 1px solid #f3f3f3; background: #fff; display: none;}
+  section #friends{position: fixed;z-index: 50;background: #f3f3f3; 
+                   width: 30%; float: right; border: 1.5px solid #f3f3f3; border-radius: 10px; margin: 3% 0% 0 48%;}
+  section #friends h4{margin: 1% 0 0 3%;}
+  section #friends a{position: relative; color: red; float: left; margin: 7% 13.5% 0% -12%;}
+  /*section #friends a img{float: left; margin: 7% 0% 1% 0%;}*/
+  
+  #comments{padding: .5% 1% ; width: 46%; height: auto; background:#f5f5f5; float: left; margin: -3% 0 6% 21.5%; border: 1px solid #f3f3f3; border-radius: 10px;}
+  #comments #user{}
+  #comments #date{padding: 1% auto;}
+  #comments #img-comment{padding: 2% auto; overflow: hidden; width: 100%; overflow: hidden;}
+  
+  
+  
+  section #member{width: 25%; background: #f3f3f3; float: right; position: absolute; margin: -28% 0 0 52%; padding: .5% 0 0% 1%; border: 1px solid #f3f3f3; border-radius: 10px;}
+  section #member a {}
+  section #member a img{width: 30px; height: 30px;margin: 7% 20% 0 -19%; }
+  
+  #user-visited{width: 48%; float: right;position: fixed; margin: 3% 0 0 19%; z-index: 2;}
+  #user-visited img{width: 50px; height: 60px; float: left; margin: 0 0 0 5%;}
+  #user-visited h3{float: left; margin: 5.5% 0 0 2%;}
+  #userlogado{width: 48%; float: right;position: fixed; margin: 3% 0 0 19%; z-index: 2;}
+  #userlogado img{width: 50px; height: 60px; float: left; margin: 0 0 0 5%;}
+  #userlogado h3{float: left; margin: 5.5% 0 0 2%;}
+  
+  #criarGrupo{position: fixed; float: left; margin: -20% 0 0 13%; padding: 3% 2% 2% 2%; width: 33.3%; border: 1px solid #f3f3f3; background: #fff; display: none;}
   #criarGrupo form #nameGrupo .nameGrupo{width: 98%; height: 25px; margin-bottom: 5%;}
-  #criarGrupo form #enviarDescricao{width: 25%; height: 30px; float: right; margin: 2% 2% 0 0;}
+  #criarGrupo form #enviarDescricao{width: 25%; height: 30px; float: right; margin: 2%;}
+  #criarGrupo form  #cancelarDescricao{width: 25%; height: 30px; float: left; margin: 2% 0 0 0;}
+  
+  #criarGrupo1{position: relative;width: 50%x; float: left; margin: 10% 0 0 10%; padding: 3% 2% 2% 2%; border: 1px solid #f3f3f3; display: none;}
+  #criarGrupo1 form #nameGrupo .nameGrupo{width: 98%; height: 25px; margin-bottom: 5%;}
+  #criarGrupo1 form #enviarDescricao{width: 25%; height: 30px; float: right; margin: 2%;}
+  #criarGrupo1 form  #cancelarDescricao{width: 25%; height: 30px; float: left; margin: 2% 0 0 0;}
+  
+  #editarGrupo{position: fixed;z-index: 5;float: left; margin: -22% 0 0 10%; padding: 3% 2% 2% 2%; width: 35%; border: 1px solid #f3f3f3; background: #fff; display: none;}
+  #editarGrupo form img{width: 98%; height: 190px; margin: 0 0 4% 0;}
+  #editarGrupo form #img-group-add{width: 97.9%; height: 189px; margin: -44% 0 4% 0; opacity: 1;}
+  #editarGrupo form #nameGrupo .nameGrupo{width: 98%; height: 25px; margin-bottom: 5%;}
+  #editarGrupo form .descricaoGrupo{width: 98%; height: 130px;}
+  #editarGrupo form #cancelarDescricao{width: 25%; height: 30px; float: right; margin: 2% 1.5% 0 0;}
+  #editarGrupo form #enviarDescricao{width: 25%; height: 30px; float: right; margin: 2% 1.5% 0 0;}
+  
+  article #sections{z-index: 0; width: 60%; float: left;  margin: 1% 2% 0 3%;}
+  article #sections1{z-index: -1; width: 60%; height: 250px; float: left;  margin: .1% 2% 0 3%;}
+  article #sections1 #group-name{ margin: -6% 0 0 3%; color: #fff;}
+  article #sections1 #entrou{width: 17%; height: 30px; float: right; margin: -3.5% 22% 0 0%; position: relative;}
+  section #img-grupo img{width: 80%; margin: 0% 0 0 1%; height: 280px;}
+  section #form-grupo{margin: 3% 0 0 1%;}
+  section #form-grupo img{width: 50px; height: 50px; margin: -.1% 0 -.5% 0}
+  section #form-grupo #select-img{width: 14%; height: 28px;margin: .5%}
+  section #form-grupo #publicar-grupo{width: 15%; height: 28px; float: right; margin: .5% 20% 0 0;}
+  section #form-grupo hr{width: 80%; }
+  section #form-grupo textarea{border: 0; width: 74%;}
+  
   
   #image-to-uploader{border: 1px solid #f5f5f5; border-top-left-radius: 10px; border-top-right-radius: 10px; width: 130px; height: 160px; float: left; margin: -19.8% .1% 1% 2%;}
   #image-to-uploader img {width: 132px; margin: 0; float: left; position: absolute; height: 160px; z-index: 1; border-top-left-radius: 10px; border-top-right-radius: 10px;}
@@ -86,7 +138,5 @@
   #nav2{}
   .nav-left{}
   .nav-left li{}
-  
-  
   
   

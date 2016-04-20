@@ -1,8 +1,10 @@
 
 package br.com.sislivros.factory;
 
+import br.com.sislivros.dao.ComentarioGrupoDao;
 import br.com.sislivros.interfaces.AmizadeDaoIf;
 import br.com.sislivros.interfaces.ComentarioDaoIf;
+import br.com.sislivros.interfaces.ComentarioGrupoDaoIf;
 import br.com.sislivros.interfaces.GrupoDaoIf;
 import br.com.sislivros.interfaces.LivroDaoIf;
 import br.com.sislivros.interfaces.SolicitacaoAmizadeDaoIf;
@@ -23,5 +25,7 @@ public interface DaoFactoryIF {
     public ComentarioDaoIf criaComentarioDao();
     
     public GrupoDaoIf criaGrupoDao();
+    
+    public ComentarioGrupoDaoIf criaComentarioGrupoDao();
     
 }

@@ -6,6 +6,8 @@
 package br.com.sislivros.interfaces;
 
 import br.com.sislivros.valueobject.Grupo;
+import br.com.sislivros.valueobject.Usuario;
+import java.util.List;
 
 /**
  *
@@ -19,10 +21,22 @@ public interface GrupoDaoIf {
     
     public boolean editarGrupo(Grupo grupo);
     
-    public boolean adicionarUsuarioGrupo();
+    public List<Grupo> listarGrupo(String idUsuario);
     
-    public boolean excluirUsuarioGrupo();
+    public Grupo returnGroupId(int id);
+    
+    public List<Grupo> returnGroupName(String name);
+    
+    public boolean verificarUser(int id, String email);
+    
+    public boolean adicionarUsuarioGrupo(int id, String email);
+    
+    public boolean excluirUsuarioGrupo(int id, String email);
     
     public boolean adicionarPhoto(String name);
+
+    public Grupo montarGrupo(int id, String name, String description);
+    
+    List<Usuario> listUser(int id, String email);
     
 }

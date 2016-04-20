@@ -4,6 +4,7 @@
     Author     : Zilderlan
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.com.sislivros.valueobject.Usuario"%>
 
@@ -140,11 +141,9 @@ $('.vote').mouseleave(function(){
                     <a href="login.jsp" ><p> Entre ou cadastre-se</p></a>
                 </div>
             <%}%>
-           
-
                 <div class="pesquisa">           
-                    <form action="" method="post" class="form">
-                        <input type="text"  name=""  placeholder="Pesquisar" class="entrada"/>
+                    <form action="listarLivros" method="post" class="form">
+                        <input type="text"  name="pesquisa"  placeholder="Pesquisar" class="entrada"/>
                         <input type="submit" class="btn-search"  value="Buscar" name="" />
                     </form>
                 </div>
@@ -255,21 +254,23 @@ $('.vote').mouseleave(function(){
                                 
                 
                 <article >  <!--  -->
+                    <c:forEach var="livros" items="${list}">
                     <section class="section1">  <!--  -->
-                        <a href="" title=""><h3> titulo aqui</h3></a> 
-                            <img src="img/livro5.jpg" title="" class="tam">
+                        <a href="retornarLivro?id=${livros.id}" title=""><h3>${livros.titulo}</h3></a> 
+                            <img src="${livros.foto}" title="" class="tam">
                         
                             <div class="informations">
                                 <h5> Infomações</h5>
-                                <h6>Título: </h6>
-                                <h6> ano: </h6>
-                                <h6>Editora: </h6>
-                                <h6>Autores: </h6>
-                                <h6>Tema/Área: </h6>
-                                <h6> ISBN: </h6>
+                                <h6>Título: ${livros.titulo}</h6>
+                                <h6> ano: ${livros.foto}</h6>
+                                <h6>Editora: ${livros.editora}</h6>
+                                <h6>Autores: ${livros.autores}</h6>
+                                <h6>Tema/Área: ${livros.area}</h6>
+                                <h6> ISBN: ${livros.isbn}</h6>
                                 <h6> Resumo: </h6>
                             </div>
                     </section >  <!--  -->
+                    </c:forEach>
                     
                    <!--  -->
 		</article >  <!--  -->

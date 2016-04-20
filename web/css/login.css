@@ -166,7 +166,7 @@ textarea:focus, input:focus, select:focus {
       height: 30px; 
   }
   
-  article section form h5{color: red; margin: 0% 0 0 40%;}
+  article section form h5{width: 100%; color: red; margin: 0% 0 0 20%;}
 
   article section  .btn{
       float: right;

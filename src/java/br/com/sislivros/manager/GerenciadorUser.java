@@ -18,9 +18,6 @@ public class GerenciadorUser {
     }
     
     public boolean userAdd(Usuario user){
-//        DaoFactoryIF factory = DaoFactory.createFactory();
-//        UsuarioDaoIf userDao = factory.criaUsuarioDao();
-//        userDao.adicionar(user);
     return DaoFactory.createFactory().criaUsuarioDao().adicionar(user);
     }
     
@@ -50,6 +47,14 @@ public class GerenciadorUser {
   
   public List<Usuario> listarPorNome(String nome){
       return DaoFactory.createFactory().criaUsuarioDao().list(nome);
+  }
+  
+  public boolean tornarAdmin (String email){
+      return DaoFactory.createFactory().criaUsuarioDao().tornarAdmin(email);
+  }
+  
+  public Usuario buscarUsuario(String email){
+      return DaoFactory.createFactory().criaUsuarioDao().buscarUser(email);
   }
   
   

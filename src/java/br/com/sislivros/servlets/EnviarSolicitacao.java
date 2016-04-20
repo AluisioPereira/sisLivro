@@ -38,16 +38,19 @@ public class EnviarSolicitacao extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String email = request.getParameter("param");
+        String email = request.getParameter("param1");
         HttpSession session = request.getSession();
         Usuario user = (Usuario)session.getAttribute("user");
         GerenciadorSolicitacaoAmizade gerenciador = new GerenciadorSolicitacaoAmizade();
-        gerenciador.clicked();
+//        gerenciador.clicked();
         boolean b = gerenciador.enviarSolicitacao(user.getEmail(), email);
-        List<Usuario> list = gerenciador.listarSolicitacoes(email);
-        session.setAttribute("listSolic", list);
+        List<Usuario> listUser = gerenciador.listarSolicitacoes(email);
+        List<SolicitacaoAmizade> mySolicitation = gerenciador.mySolicitation(user.getEmail());
+        session.setAttribute("listUser", listUser);
+        session.setAttribute("mySolicitation", mySolicitation);
         int qtde = gerenciador.qtdeSolicitacoes(user.getEmail());
         session.setAttribute("qtde", qtde);
+        response.sendRedirect(request.getParameter("p"));
        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -62,6 +65,7 @@ public class EnviarSolicitacao extends HttpServlet {
             out.println("<h1>Qtde esperada: " + qtde + "</h1>");
             out.println("<h1>Email enviado " + user.getEmail() + "</h1>");
             out.println("<h1>Email recebido " + email + "</h1>");
+            out.println("<h1>Email recebido " +request.getParameter("p")+ "</h1>");
             
             
             out.println("<h1>Clicado  " + "" + "</h1>");

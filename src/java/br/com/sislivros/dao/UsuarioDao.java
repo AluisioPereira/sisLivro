@@ -30,9 +30,8 @@ public class UsuarioDao implements UsuarioDaoIf{
     public UsuarioDao() {
     }
     
-    
-
     public boolean verificaEmail(String email){
+        if (email == null) return true;
         String sql = "SELECT * FROM Usuario WHERE email ~* ?";
         try{
             conn = Conexao.conexao();
@@ -46,15 +45,15 @@ public class UsuarioDao implements UsuarioDaoIf{
         return false;
     }
     
-    public static String validarEmail(String email){
+    public static boolean validarEmail(String email){
         String msg = "email inválido";
         String regex = "[^0-9^\\W_][a-zA-Z0-9._-]+@[a-zA-Z]+\\.[a-zA-Z]{3}(\\.[a-zA-Z]{2})*";
         Pattern pattern = Pattern.compile(regex); 
         Matcher matcher = pattern.matcher(email); 
         if (matcher.find() && matcher.group().equals(email)){ 		    
-            msg = "";	
+            return true;	
         }
-        return msg;
+        return false;
         
     }
     public static String validarName(String name){
@@ -76,7 +75,7 @@ public class UsuarioDao implements UsuarioDaoIf{
     public boolean adicionar(Usuario user) {
         String sql = "INSERT INTO USUARIO(nome, apelido, email, datanascimento, cidade, estado, senha, imagem)"
 				+ " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-
+        System.out.println(user);
  	try {
             conn = Conexao.conexao();
             stm = Conexao.openStatement(sql);
@@ -89,6 +88,7 @@ public class UsuarioDao implements UsuarioDaoIf{
             stm.setString(7, user.getSenha());
             stm.setString(8, user.getPhoto());
             stm.executeUpdate();
+            return true;
 
 		} catch (ClassNotFoundException | SQLException e) {
 			System.err.println(e.getMessage());
@@ -97,7 +97,7 @@ public class UsuarioDao implements UsuarioDaoIf{
                     Conexao.closeStatement(stm);
                     Conexao.closeConnection(conn);	
 		}
-        return true;
+        return false;
     
     }
     
@@ -208,6 +208,31 @@ public class UsuarioDao implements UsuarioDaoIf{
         
         return user;
     }
+    
+    public Usuario buscarUser(String email){
+        String sql = "SELECT * FROM Usuario WHERE email = ?";
+        try {
+            conn = Conexao.conexao();
+            stm = Conexao.openStatement(sql);
+            stm.setString(1, email);
+            ResultSet result = stm.executeQuery();
+            if (result.next()){
+                user = new Usuario();
+            user.setNick(result.getString("apelido"));
+            user.setName(result.getString("nome"));
+            user.setCity(result.getString("cidade"));
+            user.setSenha(result.getString("senha"));
+            user.setEmail(result.getString("email"));
+            user.setPhoto(result.getString("imagem"));
+            user.setTipo(result.getString("tipo"));
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+        }finally{
+            Conexao.closeStatement(stm);
+            Conexao.closeConnection(conn);
+        }
+        return user;
+    }
 
     @Override
     public boolean deletar(String email) {
@@ -251,8 +276,7 @@ public class UsuarioDao implements UsuarioDaoIf{
         }finally{
             Conexao.closeStatement(stm);
             Conexao.closeConnection(conn);
-        
-    }
+        }
         
         return list;
     }
@@ -293,8 +317,20 @@ public class UsuarioDao implements UsuarioDaoIf{
 
     @Override
     public boolean tornarAdmin(String email) {
-        String sql = "UPDATE Usuario SET administrador";
-        return true;
+        String sql = "UPDATE Usuario SET tipo = 'Administrador' WHERE email = ?";
+        try{
+            conn = Conexao.conexao();
+            stm = Conexao.openStatement(sql);
+            stm.setString(1, email);
+            stm.executeUpdate();
+            System.out.println("xxx");
+            return true;
+        } catch (ClassNotFoundException | SQLException ex) {
+            
+        }finally{
+            Conexao.closeStatement(stm);
+            Conexao.closeConnection(conn);
+        }
+        return false;
     }
-    
 }

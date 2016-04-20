@@ -194,8 +194,8 @@ position: absolute;
 
 article{width: 77%;  float: left; margin: 0% 0 0 10% ;}
 
-#user-add{display:none;position:absolute;margin: -7% 0 0 18%;padding:5%;
-	width:35%;height:350px;border:2px solid #d0d0d0; border-radius: 10px;
+#user-add{display:none;position:absolute;margin: -15% 0 0 18%;padding:5%;
+	width:35%;height:auto;border:2px solid #d0d0d0; border-radius: 10px;
 background: #fff;z-index: 2;}
 
 #user-add img{
@@ -376,7 +376,12 @@ background: #fff; z-index: 1}
       #form .area{float: right; margin: 11.6% -30% 0 0%; background: green;
       }
 }
-#form #autores {float: right; margin: 2% 0 0 0; padding: 0; background: green;}
-#form .autores {float: right;}
-#form #isbn {float: left; margin: 7% 0% 0 -0%; background: red;}
-#form .isbn {float: left; margin: .5% 0% 0 2%; background: red; width: 85%;}
+
+#form #autores { float: left; margin: 8% 0 0 -50%;}
+#form .autores {float: left; margin: 8% 0 0 -11%; }
+#form #isbn {float: left; margin: 15% 0% 0 -70%; }
+#form .isbn {float: left; margin: 20% 0% 0 -70%; }
+#form img{margin: 2% ;}
+#form .file{width: 154px; float: left; height: 30px; margin: 44% 0 0 -35%; }
+#form .submit{width: 200px; height: 30px; float: right; margin: 7% 15% 0 0;}
+#form .cancel{width: 200px; height: 30px; float: right; margin: 7% 15% 0 0;}

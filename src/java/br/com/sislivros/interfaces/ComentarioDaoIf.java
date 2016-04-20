@@ -5,7 +5,8 @@
  */
 package br.com.sislivros.interfaces;
 
-import br.com.sislivros.valueobject.Comentario;
+import br.com.sislivros.valueobject.ComentarioLivro;
+import br.com.sislivros.valueobject.ComentarioGrupo;
 
 /**
  *
@@ -13,7 +14,7 @@ import br.com.sislivros.valueobject.Comentario;
  */
 public interface ComentarioDaoIf {
     
-    public boolean criarComentario(Comentario coment);
+    public boolean criarComentario(ComentarioLivro comment);
     
     public boolean excluirComentario(int id);
     

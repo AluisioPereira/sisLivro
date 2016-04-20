@@ -7,12 +7,14 @@ package br.com.sislivros.factory;
 
 import br.com.sislivros.dao.AmizadeDao;
 import br.com.sislivros.dao.ComentarioDao;
+import br.com.sislivros.dao.ComentarioGrupoDao;
 import br.com.sislivros.dao.GrupoDao;
 import br.com.sislivros.dao.LivroDao;
 import br.com.sislivros.dao.SolicitacaoAmizadeDao;
 import br.com.sislivros.dao.UsuarioDao;
 import br.com.sislivros.interfaces.AmizadeDaoIf;
 import br.com.sislivros.interfaces.ComentarioDaoIf;
+import br.com.sislivros.interfaces.ComentarioGrupoDaoIf;
 import br.com.sislivros.interfaces.GrupoDaoIf;
 import br.com.sislivros.interfaces.LivroDaoIf;
 import br.com.sislivros.interfaces.SolicitacaoAmizadeDaoIf;
@@ -44,10 +46,6 @@ public class DaoFactoryBD implements DaoFactoryIF{
         return new AmizadeDao();
     }
     
-    /**
-     *
-     * @return
-     */
     public ComentarioDaoIf criaComentarioDao(){
         return new ComentarioDao();
     }
@@ -55,8 +53,8 @@ public class DaoFactoryBD implements DaoFactoryIF{
     public GrupoDaoIf criaGrupoDao(){
         return new GrupoDao();
     }
-
     
-    
-    
+    public ComentarioGrupoDaoIf criaComentarioGrupoDao(){
+        return new ComentarioGrupoDao();
+    }
 }

@@ -37,7 +37,6 @@ public class ser extends HttpServlet {
             throws ServletException, IOException {
 
                 System.out.println("xxxxxxxxxx");
-        response.sendRedirect("cadastr.jsp");
         response.setContentType("text/html;charset=UTF-8");
         
 
@@ -50,18 +49,18 @@ public class ser extends HttpServlet {
 //        String city = request.getParameter("city");
 //        String state = request.getParameter("state");
 //        String image = request.getParameter("caminho");
-//        try (PrintWriter out = response.getWriter()) {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet ser</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet ser at " + nick + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ser</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet ser at " +"" + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

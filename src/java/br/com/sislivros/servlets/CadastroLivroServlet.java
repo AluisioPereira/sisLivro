@@ -5,6 +5,8 @@
  */
 package br.com.sislivros.servlets;
 
+import br.com.sislivros.manager.GerenciadorLivros;
+import br.com.sislivros.valueobject.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,15 +35,18 @@ public class CadastroLivroServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        HttpSession sessao = request.getSession();
+        Usuario user = (Usuario) sessao.getAttribute("user");
         String titulo = (String) request.getAttribute("titulo");
-        int ano = (int) request.getAttribute("ano");
+        int ano = Integer.parseInt((String) request.getAttribute("ano"));
         String editora = (String) request.getAttribute("editora");
-        String autores = (String) request.getAttribute("autores");
+        String autores = (String) request.getAttribute("utores");
         String area = (String) request.getAttribute("area");
         String isbn = (String) request.getAttribute("isbn");
-        String foto = (String) request.getAttribute("foto");
-
+        String foto = (String) request.getAttribute("caminho");
+        GerenciadorLivros gLivro = new GerenciadorLivros();
+        boolean b = gLivro.criaLivro(gLivro.montarLivro(user.getEmail(), titulo, ano, editora, autores, foto, area, isbn));
+        response.sendRedirect("gerenciamentolivros.jsp");
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -50,7 +56,8 @@ public class CadastroLivroServlet extends HttpServlet {
             out.println("<title>Servlet CadastroLivroServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet CadastroLivroServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CadastroLivroServlet at " + ano + "</h1>");
+            out.println("<h1>Servlet CadastroLivroServlet at " + foto + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

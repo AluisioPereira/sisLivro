@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/interfaces/GrupoDaoIf.java</file>
-            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/dao/GrupoDao.java</file>
-            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/dao/UsuarioDao.java</file>
-            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/valueobject/Grupo.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/web/home.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/web/index.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/servlets/RecDadosCometGroup.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/web/Grupo.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/servlets/RecuperarDadosLivro.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/servlets/EditarGrupo.java</file>
         </group>
     </open-files>
 </project-private>

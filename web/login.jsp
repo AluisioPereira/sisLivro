@@ -89,10 +89,12 @@ location.href=" cadastroCliente.html"
                             <label for="userpassword" class="" data-icon="">Senha: </label>
                             <input type="password" name="password" placeholder="Ex: M1nhA53nha" value="">
                             </p>
+                            <h6>Login ou senha inválidos</h6>
                             <input class="btn" name="" type="submit" value="Login" >
                             <input class="btn" name="" type="button" value="Cancelar" onClick="Nova()">
                             <!--<input class="btn" name="" type="button" value="Cancelar" onClick="Nova()"  >-->
                         </form>
+                    
                     
                 </section>
 
@@ -105,9 +107,9 @@ location.href=" cadastroCliente.html"
                             <label for="join" class="emailjoin" data-icon="">Email: </label>
                             <input type="text" name="newemail" placeholder="Ex: meuemail@email.com" >
                              <%        
-                            if(request.getAttribute("mensagem") != null){    
+                            if(session.getAttribute("mensagem") != null){    
                             %>
-                            <h5><%=request.getAttribute("mensagem")%></h5>
+                            <h5><%=session.getAttribute("mensagem")%></h5>
                             <%}%>
                             </p>
                             <input class="btn" name="" type="submit" value="Continuar >>"  >

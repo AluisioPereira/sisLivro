@@ -94,6 +94,11 @@ public class Usuario {
         this.tipo = tipo;
     }
 
+    @Override
+    public String toString() {
+        return "Usuario{" + "name=" + name + ", senha=" + senha + ", nick=" + nick + ", email=" + email + ", nasc=" + nasc + ", city=" + city + ", state=" + state + ", photo=" + photo + ", tipo=" + tipo +'}'+ "\n\n";
+    }
+
     
     
 }

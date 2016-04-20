@@ -32,7 +32,7 @@ public class DeletarUsuario extends HttpServlet {
                 
             }
             
-             response.sendRedirect("home.jsp");
+             response.sendRedirect("administraruser.jsp");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
           

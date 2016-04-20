@@ -1,88 +1,107 @@
-
+<%-- 
+    Document   : setting
+    Created on : 27/02/2016, 14:54:59
+    Author     : Zilderlan
+--%>
 
 <%@page import="java.util.List"%>
+<%@page import="br.com.sislivros.manager.GerenciadorSolicitacaoAmizade"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="br.com.sislivros.manager.GerenciadorUser"%>
 <%@page import="br.com.sislivros.valueobject.Usuario"%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     Usuario user = (Usuario) session.getAttribute("user");
-    if (user == null)
+    if (user == null) {
         request.getRequestDispatcher("login.jsp").forward(request, response);
+    }
     String s = user.getName();
     String name[] = s.split(" ");
+
+    GerenciadorSolicitacaoAmizade gerenciador = new GerenciadorSolicitacaoAmizade();
+
+
 %>
+<!DOCTYPE html>  <!--  -->
 <html lang="PT-BR">  <!--  -->
     <head>
-		<meta charset="UTF-8">
-		<meta http-equiv="Content-Type" content="text/html">
-		<meta http-equiv="refresh" content="200">
-		<meta name="author" content="Zilderlan Leite, Ferreira, Aluisio Pereira">
-		<meta name="" content="">
-		<meta name="" content="">
-		<title>SisLIVROS</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html">
+        <meta http-equiv="refresh" content="200">
+        <meta name="author" content="Zilderlan Leite, Ferreira, Aluisio Pereira">
+        <meta name="" content="">
+        <meta name="" content="">
+        <title>SisLIVROS</title>
 
-		<link rel="stylesheet" href="css/setting.css" type="text/css" >	
-		
-                <script type="text/javascript" src="js/jquery.js"></script>
+        <link rel="stylesheet" href="css/setting.css" type="text/css" >	
+
+        <script type="text/javascript" src="js/jquery.js"></script>
     </head>
+
 
     <body>
         <header> <!--  -->
             <div class="" id="">
-		<form action="Pesquisa" method="post" name="" class="" id="">
+                <form action="Pesquisa?param=usuario" method="post" name="" class="" id="">
                     <input type="text" name="nome" class="" id="search">
                     <input type="submit" name="" class="" id="btn-search">
-		</form>
+                </form>
             </div>
 
             <div class="" id="menu">
-		<a href="" id="perfil" alt=""><img src="img/conf.png" title=""></a>
+
+                <a href="" id="perfil" alt=""><img src="img/conf.png" title=""></a>
             </div> 
 
             <div class="" id="perf">
-		<a href="" id="perfil" alt=""><img src="<%=user.getPhoto()%>" title=""></a>
-		<a href="#" ><h3> Ol�, <%= name[0]%>!</h3></a>
-		<a href="#" ><h4>Notifica��es</h4></a>
+                <a href="" id="perfil" alt=""><img src="<%=user.getPhoto()%>" title=""></a>
+                <a href="" ><h3> Olá, <%= name[0]%>!</h3></a>
+                <a href="EnviarSolicitacao?acao=clicked" onClick="document.getElementById('notifications').style.display = 'block';">
+                    <h4>Notificações${qtde}</h4>
+                </a>
+
+
             </div> 
         </header>  <!--  -->
 		
 	<article>
             <div class="left">
-		
-			<nav class="nav-left" id="">
-				<ul>
-					<li><h3>Menu</h3></li>
-					<li><a href="index.jsp" >Inicio</a></li>
-					<li><a href="" >Perfil</a></li>
-					<li><a href="excluir" >Excluir conta</a></li>
-					<li><a href="Logout" >Sair</a></li>
-				</ul>
-			
-			</nav>
-			
-			<nav class="nav-left" id="nav1">
-				<ul>
-					<li><h3>Meus alguma coisa</h3></li>
-					<li><a href="" >alguma coisa</a></li>
-					<li><a href="" >alguma coisa</a></li>
-					<li><a href="" >alguma coisa</a></li>
-					<li><a href="" >alguma coisa</a></li>
-				</ul>
-			
-			</nav>
-			
-			<nav class="nav-left" id="nav2">
-				<ul>
-					<li><h3>Meus alguma coisa</h3></li>
-					<li><a href="" >alguma coisa</a></li>
-					<li><a href="" >alguma coisa</a></li>
-					<li><a href="" >alguma coisa</a></li>
-					<li><a href="" >alguma coisa</a></li>
-				</ul>
-			
-			</nav>
-			</div>
-                    <section>
+                <nav class="nav-left" id="">
+                    <ul>
+                        <li><h3>Menu</h3></li>
+                        <li><a href="index.jsp" >Inicio</a></li>
+                        <li><a href="setting.jsp" >Perfil</a></li>
+                        <li><a href="excluir" >Excluir conta</a></li>
+                        <li><a href="Logout" >Sair</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="nav-left" id="nav1">
+                    <ul>
+                        <li><h3>Meus grupos</h3></li>
+                            <c:forEach var="groups" items="${group}">
+                                <li><a href="RetornarGrupo?id=${groups.id}" >${groups.name}</a></li>
+                            </c:forEach>
+                        <li><a href="#" onclick="document.getElementById('editarGrupo').style.display = 'block';">Editar grupo</a></li>
+                        <li><a href="#" onclick="document.getElementById('criarGrupo').style.display = 'block';">Novo grupo</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="nav-left" id="nav2">
+                    <ul>
+                        <li><h3>Notificações</h3></li>
+                        <li><a href="#" >Pedidos de amizade</a></li>
+                        <li><a href="#" >Recomendações</a></li>
+                        <li><a href="#" >alguma coisa</a></li>
+                        <li><a href="#" >alguma coisa</a></li>
+                    </ul>
+
+                </nav>
+            </div>
+            <section class="">
+
+          
+                
                         <script>
                             function abrirPagina(pagina){
                             location.href = pagina;
