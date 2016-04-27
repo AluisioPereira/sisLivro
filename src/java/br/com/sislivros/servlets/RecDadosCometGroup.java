@@ -50,11 +50,11 @@ public class RecDadosCometGroup extends HttpServlet {
 //						resp.getWriter().println("Size:"+item.getSize());
 //						resp.getWriter().println("ContentType:"+item.getContentType());
                         if (item.getName() == "" || item.getName() == null) {
-                            caminho = "";
+                            caminho = "img\\usuario.jpg";
                         } else {
                             caminho = "img" + File.separator + new Date().getTime() + "_" + item.getName();
                             resp.getWriter().println("Caminho: " + caminho);
-//                          File uploadedFile = new File("C:\\TomCat\\apache-tomcat-8.0.21\\webapps\\sislivros\\img" + caminho);
+//                          File uploadedFile = new File("C:\\TomCat\\apache-tomcat-8.0.21\\webapps\\sislivros\\" + caminho);
                             File uploadedFile = new File("E:\\Documentos\\NetBeansProjects\\sislivrosgit\\sisLivro\\build\\web\\" + caminho);
                             item.write(uploadedFile);
                         }
@@ -69,7 +69,6 @@ public class RecDadosCometGroup extends HttpServlet {
                 
             } catch (Exception e) {
                 resp.getWriter().println("ocorreu um problema ao fazer o upload: " + e.getMessage());
-                
             }
         }
     }

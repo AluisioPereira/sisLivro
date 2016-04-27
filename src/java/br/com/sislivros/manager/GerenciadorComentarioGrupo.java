@@ -20,8 +20,8 @@ public class GerenciadorComentarioGrupo {
         return DaoFactory.createFactory().criaComentarioGrupoDao().addComent(email, id, comment, img, user);
     }
     
-    public List<ComentarioGrupo> listComment(){
-        return DaoFactory.createFactory().criaComentarioGrupoDao().listComment();
+    public List<ComentarioGrupo> listComment(int id){
+        return DaoFactory.createFactory().criaComentarioGrupoDao().listComment(id);
     }
     
 }

@@ -96,6 +96,7 @@ public class GrupoDao implements GrupoDaoIf{
                 grupo.setI(result.getInt("id"));
                 grupo.setName(result.getString("nome"));
                 grupo.setDescription(result.getString("descricao"));
+                
                 list.add(grupo);
             }
         } catch (ClassNotFoundException | SQLException e) {

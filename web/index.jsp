@@ -95,7 +95,7 @@
                             %>
 
 
-                        <li ><a href="<%=pagina%>" title="">Meu Espaço</a></li>
+                        <li ><a href="setting.jsp" title="">Meu Espaço</a></li>
 
                         <li ><a href="" title="">Pilítica</a></li>
                         <li ><a href="" title="">Portfólio</a></li>

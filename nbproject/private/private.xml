@@ -3,12 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/web/home.jsp</file>
             <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/web/index.jsp</file>
-            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/servlets/RecDadosCometGroup.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/servlets/RetornarGrupo.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/web/META-INF/context.xml</file>
             <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/web/Grupo.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/test/bancoPsd.sql</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/web/css/setting.css</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/conection/Conexao.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/manager/GerenciadorComentarioGrupo.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/dao/GrupoDao.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/web/PesquisaLivro.jsp</file>
             <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/servlets/RecuperarDadosLivro.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/dao/UsuarioDao.java</file>
             <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/src/java/br/com/sislivros/servlets/EditarGrupo.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/sislivrosgit/sisLivro/web/livro.jsp</file>
         </group>
     </open-files>
 </project-private>

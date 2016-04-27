@@ -59,13 +59,13 @@ public class ComentarioGrupoDao implements ComentarioGrupoDaoIf{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public List<ComentarioGrupo> listComment(){
+    public List<ComentarioGrupo> listComment(int id){
         List list = new ArrayList();
-        String sql = "SELECT * FROM ComentarioGrupo "+
-                "ORDER BY dataComment asc";
+        String sql = "SELECT * FROM ComentarioGrupo WHERE idGrupo = ?";
         try{
             conn = Conexao.conexao();
             stm = Conexao.openStatement(sql);
+            stm.setInt(1, id);
             ResultSet result = stm.executeQuery();
             while(result.next()){
                 comment =  new ComentarioGrupo();

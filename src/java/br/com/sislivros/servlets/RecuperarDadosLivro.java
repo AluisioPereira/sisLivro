@@ -59,7 +59,7 @@ public class RecuperarDadosLivro extends HttpServlet {
                         response.getWriter().println("ContentType:" + item.getContentType());
                         response.getWriter().println("C:\\uploads" + File.separator + new Date().getTime() + "_" + item.getName());
                         if (item.getName() == "" || item.getName() == null) {
-                            caminho = "";
+                            caminho = "img"+File.separator+"sis1.jpg";
                         } else {
                             caminho = ("img"+File.separator + new Date().getTime() + "_" + item.getName());
                         }

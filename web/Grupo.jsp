@@ -142,10 +142,10 @@
                         <img src="${grupo.photo}"> 
                         <input type="file" name="img-group" id="img-group-add">
                         <div id="nameGrupo">
-                            <input value="${grupo.name}" type="text" class="nameGrupo" name="nameGrupo" placeholder="Nome do Grupo">
+                            <input  type="text" class="nameGrupo" name="nameGrupo1" placeholder="Nome do Grupo">
                         </div>
                         <div id="descricaoGrupo" name="descricaoGrupo">
-                            <textarea type="text" class="descricaoGrupo" name="descricaoGrupo"  placeholder="Descrição do grupo">${grupo.description}</textarea>
+                            <textarea type="text" class="descricaoGrupo" name="descricaoGrupo"  placeholder="Descrição do grupo"></textarea>
                         </div>
                         <input type="submit" id="enviarDescricao" value="Concluir">
                         <input type="button" id="cancelarDescricao" value="Cancelar" onclick="document.getElementById('editarGrupo').style.display = 'none';">
@@ -199,7 +199,9 @@
                     </div>
                     <div id="img-comment">
                         <c:if test="${commentsGroup.photo ne ''}">
-                            <img src="${commentsGroup.photo}" alt="Imagem" >
+                            <img src="${commentsGroup.photo}" alt="Imagem comentario" >
+                            ${"img\\usuario.jpg"}
+                            ${commentsGroup.photo}
                         </c:if>
                     </div>
                     <div id="msg-comment">

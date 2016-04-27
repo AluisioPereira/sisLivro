@@ -38,7 +38,7 @@ public class RetornarGrupo extends HttpServlet {
         session.setAttribute("b", b);
         session.setAttribute("grupo", gGroup.returnGroupId(Integer.parseInt(request.getParameter("id"))));
         session.setAttribute("listUserGrupo", listUserGrupo);
-        List<ComentarioGrupo> commentGroup = gComentGrupo.listComment();
+        List<ComentarioGrupo> commentGroup = gComentGrupo.listComment(Integer.parseInt(request.getParameter("id")));
         session.setAttribute("commentGroup", commentGroup);
         response.sendRedirect("Grupo.jsp");
         try (PrintWriter out = response.getWriter()) {

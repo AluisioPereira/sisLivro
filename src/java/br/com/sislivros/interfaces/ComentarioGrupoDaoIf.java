@@ -19,6 +19,6 @@ public interface ComentarioGrupoDaoIf {
     
     public boolean deleteComment(int id);
     
-    public List<ComentarioGrupo> listComment();
+    public List<ComentarioGrupo> listComment(int id);
     
 }
