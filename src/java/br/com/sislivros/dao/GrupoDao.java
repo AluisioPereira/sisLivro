@@ -64,14 +64,16 @@ public class GrupoDao implements GrupoDaoIf{
     
     @Override
     public boolean editarGrupo(Grupo grupo){
-        String sql = "UPDATE Grupo SET nome = ?, descricao = ? WHERE id = ?";
+        String sql = "UPDATE Grupo SET nome = ?, descricao = ?, foto = ? WHERE id = ?";
         try{
             conn = Conexao.conexao();
             stm = Conexao.openStatement(sql);
             stm.setString(1, grupo.getName());
             stm.setString(2, grupo.getDescription());
-            stm.setInt(3, grupo.getId());
+            stm.setString(3, grupo.getPhoto());
+            stm.setInt(4, grupo.getId());
             stm.executeUpdate();
+            return true;
         } catch (ClassNotFoundException | SQLException e) {
             System.err.println(e.getMessage());
              e.printStackTrace();

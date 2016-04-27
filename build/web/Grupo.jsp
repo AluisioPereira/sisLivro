@@ -107,12 +107,11 @@
             </section>            
             <!--Envia comentário-->
             <section id="sections">
-
                 <div id="form-grupo">
                     <form action="RecDadosCometGroup?param=comment-add&id=${grupo.id}&p=Grupo.jsp" method="post" enctype="multipart/form-data">
                         <hr>
                         <img src="${user.photo}">
-                        <textarea value="" name="textGrupo" id="textGrupo" placeholder="Escreva algo" rows="" cols="60"></textarea>
+                        <textarea name="textGrupo" id="textGrupo" placeholder="Escreva algo" rows="" cols="60">ddddd</textarea>
                         <hr>
                         <input type="file" id="select-img"  name="img-comment">
                         <input type="submit" value="Publicar" id="publicar-grupo">
@@ -138,15 +137,16 @@
             </section>
             <section>
                 <div id="editarGrupo">
-                    <form action="RecDadosCometGroup?param=edit" method="post" enctype="multipart/form-data">
-                        <img src="${grupo.photo}"> 
-                        <input type="file" name="img-group" id="img-group-add">
+                    <form action="RecDadosCometGroup?param=edit&id=${grupo.id}&p=Grupo.jsp" method="post" enctype="multipart/form-data">
+                    <img src="${grupo.photo}"> 
+                        
                         <div id="nameGrupo">
-                            <input  type="text" class="nameGrupo" name="nameGrupo1" placeholder="Nome do Grupo">
+                            <input  type="text" class="nameGrupo" name="nameGrupo" placeholder="Nome do Grupo">
                         </div>
                         <div id="descricaoGrupo" name="descricaoGrupo">
                             <textarea type="text" class="descricaoGrupo" name="descricaoGrupo"  placeholder="Descrição do grupo"></textarea>
                         </div>
+                    <input type="file" name="img-group" id="img-group-add">
                         <input type="submit" id="enviarDescricao" value="Concluir">
                         <input type="button" id="cancelarDescricao" value="Cancelar" onclick="document.getElementById('editarGrupo').style.display = 'none';">
                     </form>

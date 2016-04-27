@@ -51,4 +51,8 @@ public class GerenciadorGrupo {
     public boolean excluirUser(int id, String email){
         return DaoFactory.createFactory().criaGrupoDao().excluirUsuarioGrupo(id, email);
     }
+    
+    public boolean editGroup(Grupo g){
+        return DaoFactory.createFactory().criaGrupoDao().editarGrupo(g);
+    }
 }

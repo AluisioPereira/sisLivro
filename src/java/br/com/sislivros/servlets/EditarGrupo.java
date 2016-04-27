@@ -40,19 +40,14 @@ public class EditarGrupo extends HttpServlet {
         String param2 = request.getParameter("descricaoGrupo");
         if (request.getParameter("param").equalsIgnoreCase("comment-add")) {
             response.getWriter().println("Comentar");
-            response.getWriter().println("<br>");
             response.getWriter().println("TextGroup:" + request.getAttribute("textGrupo"));
-            response.getWriter().println("<br>");
             response.getWriter().println(request.getAttribute("caminho"));
-            response.getWriter().println("<br>");
             response.getWriter().println(request.getParameter("id"));
-            response.getWriter().println("<br>");
             GerenciadorComentarioGrupo gComentGrupo = new GerenciadorComentarioGrupo();
             gComentGrupo.addComentGrupo(u.getEmail(), Integer.parseInt(request.getParameter("id")), request.getAttribute("textGrupo").toString(), request.getAttribute("caminho").toString(), u.getName());
             List<ComentarioGrupo> commentGroup = gComentGrupo.listComment(Integer.parseInt(request.getParameter("id")));
             session.setAttribute("commentGroup", commentGroup);
-
-//            response.sendRedirect(request.getParameter("p"));
+            response.sendRedirect(request.getParameter("p"));
         } 
         else if(request.getParameter("param").equalsIgnoreCase("add")){
             response.getWriter().println("Adicionar");
@@ -62,13 +57,16 @@ public class EditarGrupo extends HttpServlet {
             manager.criarGrupo(grupo);
             manager.addUser(grupo.getId(), u.getEmail());
             session.setAttribute("group", manager.listAll(u.getEmail()));
-//            response.sendRedirect(request.getParameter("p"));
+            response.sendRedirect(request.getParameter("p"));
         }else if(request.getParameter("param").equalsIgnoreCase("edit")){
-            response.getWriter().println("Editar");
+            response.getWriter().println("Editar <br>");
             response.getWriter().println(request.getParameter("param"));
-            response.getWriter().println(request.getAttribute("caminho"));
-            response.getWriter().println(request.getAttribute("nameGrupo1"));
-            response.getWriter().println("Descricao: "+request.getAttribute("descricaoGrupo"));
+            response.getWriter().println("<br> "+request.getAttribute("caminho"));
+            response.getWriter().println("<br> "+request.getAttribute("nameGrupo"));
+            Grupo g =  manager.montarGrupo(Integer.parseInt(request.getParameter("id")), request.getAttribute("nameGrupo").toString(), request.getAttribute("descricaoGrupo").toString());
+            manager.editGroup(g);
+            session.setAttribute("group", manager.listAll(u.getEmail()));
+            response.sendRedirect(request.getParameter("p"));           
         }
 
     

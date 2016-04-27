@@ -76,7 +76,7 @@
   
   #editarGrupo{position: fixed;z-index: 5;float: left; margin: -22% 0 0 10%; padding: 3% 2% 2% 2%; width: 35%; border: 1px solid #f3f3f3; background: #fff; display: none;}
   #editarGrupo form img{width: 98%; height: 190px; margin: 0 0 4% 0;}
-  #editarGrupo form #img-group-add{width: 97.9%; height: 189px; margin: -44% 0 4% 0; opacity: 1;}
+  #editarGrupo form #img-group-add{float: top;width: 97.9%; height: 189px; margin: -81.45% 0% 4% 0; opacity: 1; background: red;}
   #editarGrupo form #nameGrupo .nameGrupo{width: 98%; height: 25px; margin-bottom: 5%;}
   #editarGrupo form .descricaoGrupo{width: 98%; height: 130px;}
   #editarGrupo form #cancelarDescricao{width: 25%; height: 30px; float: right; margin: 2% 1.5% 0 0;}
