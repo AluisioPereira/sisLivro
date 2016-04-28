@@ -111,7 +111,7 @@
                     <form action="RecDadosCometGroup?param=comment-add&id=${grupo.id}&p=Grupo.jsp" method="post" enctype="multipart/form-data">
                         <hr>
                         <img src="${user.photo}">
-                        <textarea name="textGrupo" id="textGrupo" placeholder="Escreva algo" rows="" cols="60">ddddd</textarea>
+                        <textarea name="textGrupo" id="textGrupo" placeholder="Escreva algo" rows="" cols="60"></textarea>
                         <hr>
                         <input type="file" id="select-img"  name="img-comment">
                         <input type="submit" value="Publicar" id="publicar-grupo">
@@ -141,12 +141,12 @@
                     <img src="${grupo.photo}"> 
                         
                         <div id="nameGrupo">
-                            <input  type="text" class="nameGrupo" name="nameGrupo" placeholder="Nome do Grupo">
+                            <input value="${grupo.name}" type="text" class="nameGrupo" name="nameGrupo" placeholder="Nome do Grupo">
                         </div>
                         <div id="descricaoGrupo" name="descricaoGrupo">
-                            <textarea type="text" class="descricaoGrupo" name="descricaoGrupo"  placeholder="Descrição do grupo"></textarea>
+                            <textarea type="text" class="descricaoGrupo" name="descricaoGrupo"  placeholder="Descrição do grupo">${grupo.description}</textarea>
                         </div>
-                    <input type="file" name="img-group" id="img-group-add">
+                        <input type="file" VALUE="XXX" name="file" id="img-group-add">
                         <input type="submit" id="enviarDescricao" value="Concluir">
                         <input type="button" id="cancelarDescricao" value="Cancelar" onclick="document.getElementById('editarGrupo').style.display = 'none';">
                     </form>
@@ -154,7 +154,7 @@
             </section>   
             <section>
                 <div id="criarGrupo">
-                    <form action="editarGrupo?param=add&p=setting.jsp" method="post">
+                    <form action="RecDadosCometGroup?param=add&p=setting.jsp" method="post" enctype="multipart/form-data">
                         <div id="nameGrupo">
                             <input type="text" class="nameGrupo" name="nameGrupo" placeholder="Nome do Grupo">
                         </div>
@@ -200,8 +200,6 @@
                     <div id="img-comment">
                         <c:if test="${commentsGroup.photo ne ''}">
                             <img src="${commentsGroup.photo}" alt="Imagem comentario" >
-                            ${"img\\usuario.jpg"}
-                            ${commentsGroup.photo}
                         </c:if>
                     </div>
                     <div id="msg-comment">

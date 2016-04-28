@@ -20,8 +20,8 @@ public class GerenciadorGrupo {
         return DaoFactory.createFactory().criaGrupoDao().criarGrupo(grupo);
     }
 
-    public Grupo montarGrupo(int id, String name, String description) {
-        return DaoFactory.createFactory().criaGrupoDao().montarGrupo(id, name, description);
+    public Grupo montarGrupo(int id, String name, String description, String f) {
+        return DaoFactory.createFactory().criaGrupoDao().montarGrupo(id, name, description, f);
     }
 
     public List<Grupo> listAll(String email) {

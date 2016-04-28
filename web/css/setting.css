@@ -40,8 +40,7 @@
   article section form .photo{float: left; width: 15.5%; float: right; margin: 2% 13.3% 0 0; height: 162px;}
   article section form .photo img {float: right;width: 130px; height: 160px; border: 1px solid #ccc; border-top-left-radius: 10px; border-top-right-radius: 10px;}
   
-  section #friends{position: fixed;z-index: 50;background: #f3f3f3; 
-                   width: 30%; float: right; border: 1.5px solid #f3f3f3; border-radius: 10px; margin: 3% 0% 0 48%;}
+  section #friends{position: fixed;z-index: 50;background: #f3f3f3; width: 30%; float: right; border: 1.5px solid #f3f3f3; border-radius: 10px; margin: 3% 0% 0 48%;}
   section #friends h4{margin: 1% 0 0 3%;}
   section #friends a{position: relative; color: red; float: left; margin: 7% 13.5% 0% -12%;}
   /*section #friends a img{float: left; margin: 7% 0% 1% 0%;}*/
@@ -86,7 +85,8 @@
   article #sections1{z-index: -1; width: 60%; height: 250px; float: left;  margin: .1% 2% 0 3%;}
   article #sections1 #group-name{ margin: -6% 0 0 3%; color: #fff;}
   article #sections1 #entrou{width: 17%; height: 30px; float: right; margin: -3.5% 22% 0 0%; position: relative;}
-  section #img-grupo img{width: 80%; margin: 0% 0 0 1%; height: 280px;}
+  section #img-grupo {}
+  section #img-grupo img{width: 80%; margin: 0% 0 0 1%; height: 280px;background: #2b2b2b;}
   section #form-grupo{margin: 3% 0 0 1%;}
   section #form-grupo img{width: 50px; height: 50px; margin: -.1% 0 -.5% 0}
   section #form-grupo #select-img{width: 14%; height: 28px;margin: .5%}

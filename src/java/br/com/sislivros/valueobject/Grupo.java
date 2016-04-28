@@ -13,7 +13,7 @@ public class Grupo {
 
     public Grupo() {}
     
-    public Grupo(int id, String name, String description) {
+    public Grupo(int id, String name, String description, String photo) {
         this.id = id;
         this.name = name;
         this.photo = photo;

@@ -61,6 +61,8 @@ public class TestConection {
 
 //        System.out.println(g1.tornarAdmin("aluisio11@hotmail.com"));
         GerenciadorGrupo gp = new GerenciadorGrupo();
+        Grupo g = gp.returnGroupId(1513657590);
+        System.out.println(g.getPhoto());
 //        System.out.println(gp.excluirUser(694054256, "zilderlan.leite@gmail.com"));
 //        System.out.println(gp.retornarUsuarioGrupo(694054256, "aluisio.montehorebe@gmail.com"));
 //        System.out.println(new java.util.Date().getTime());
@@ -69,7 +71,7 @@ public class TestConection {
 //        System.out.println(gCoG.addComentGrupo("aluisio.montehorebe@gmail.com",694054256 , "xxxxxxxxx", "ccc", "name"));
 //        System.out.println(gCoG.listComment());
         GerenciadorLivros gl = new GerenciadorLivros();
-        System.out.println(gl.pesquisarporNome("o"));
+//        System.out.println(gl.pesquisarporNome("o"));
         
 //        Livro l = new Livro("aluisio.montehorebe@gmail.com", "xxx", 2015, "xxxx", "xxxx", "foto", "exatas", "123456");
 //        System.out.println(l);

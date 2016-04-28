@@ -53,7 +53,7 @@ public class EditarGrupo extends HttpServlet {
             response.getWriter().println("Adicionar");
             response.getWriter().println(request.getParameter("nameGrupo"));
             response.getWriter().println(request.getParameter("descricaoGrupo"));
-            Grupo grupo = manager.montarGrupo((int) new Date().getTime(), name, description);
+            Grupo grupo = manager.montarGrupo((int) new Date().getTime(), request.getAttribute("nameGrupo").toString(), request.getAttribute("descricaoGrupo").toString(), request.getAttribute("caminho").toString());
             manager.criarGrupo(grupo);
             manager.addUser(grupo.getId(), u.getEmail());
             session.setAttribute("group", manager.listAll(u.getEmail()));
@@ -61,11 +61,23 @@ public class EditarGrupo extends HttpServlet {
         }else if(request.getParameter("param").equalsIgnoreCase("edit")){
             response.getWriter().println("Editar <br>");
             response.getWriter().println(request.getParameter("param"));
-            response.getWriter().println("<br> "+request.getAttribute("caminho"));
-            response.getWriter().println("<br> "+request.getAttribute("nameGrupo"));
-            Grupo g =  manager.montarGrupo(Integer.parseInt(request.getParameter("id")), request.getAttribute("nameGrupo").toString(), request.getAttribute("descricaoGrupo").toString());
-            manager.editGroup(g);
+            response.getWriter().println("<br> Caminho: "+request.getAttribute("caminho").toString());
+//            response.getWriter().println("<br> "+request.getAttribute("nameGrupo"));
+//            response.getWriter().println("<br> "+request.getAttribute("descricaoGrupo"));
+            Grupo gr = new Grupo();
+            gr.setI(Integer.parseInt(request.getParameter("id")));
+            gr.setName(request.getAttribute("nameGrupo").toString());
+            gr.setDescription(request.getAttribute("descricaoGrupo").toString());
+            if (request.getAttribute("caminho").toString().length() >= 4)
+                gr.setPhoto(request.getAttribute("caminho").toString());
+            else{
+                Grupo g = manager.returnGroupId(Integer.parseInt(request.getParameter("id")));
+                gr.setPhoto(g.getPhoto());
+            }
+//            Grupo g =  manager.montarGrupo(Integer.parseInt(request.getParameter("id")), request.getAttribute("nameGrupo").toString(), request.getAttribute("descricaoGrupo").toString());
+            manager.editGroup(gr);
             session.setAttribute("group", manager.listAll(u.getEmail()));
+            session.setAttribute("grupo", manager.returnGroupId(Integer.parseInt(request.getParameter("id"))));
             response.sendRedirect(request.getParameter("p"));           
         }
 

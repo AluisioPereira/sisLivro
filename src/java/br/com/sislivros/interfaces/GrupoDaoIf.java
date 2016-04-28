@@ -35,7 +35,7 @@ public interface GrupoDaoIf {
     
     public boolean adicionarPhoto(String name);
 
-    public Grupo montarGrupo(int id, String name, String description);
+    public Grupo montarGrupo(int id, String name, String description, String f);
     
     List<Usuario> listUser(int id, String email);
     

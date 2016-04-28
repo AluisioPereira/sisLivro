@@ -260,7 +260,7 @@ public class GrupoDao implements GrupoDaoIf{
         return false;
     }
 
-    public Grupo montarGrupo(int id, String name, String descrition) {
-        return new Grupo(id, name, descrition);
+    public Grupo montarGrupo(int id, String name, String descrition, String foto) {
+        return new Grupo(id, name, descrition, foto);
     }  
 }
